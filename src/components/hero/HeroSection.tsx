@@ -131,6 +131,7 @@ export default function HeroSection() {
             className="hero-cta-input"
             aria-label="Email address"
           />
+          
           <button
             id="hero-submit-btn"
             type="submit"
