@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const NAV_LINKS = ["HOME", "ABOUT US", "SERVICES", "CONTACT"];
+import Navbar from "@/components/navigation/Navbar";
 
 export default function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
@@ -28,38 +28,8 @@ export default function HeroSection() {
       {/* ── Subtle grid overlay ── */}
       <div className="hero-grid" aria-hidden="true" />
 
-      {/* ── Navigation ── */}
-      <nav className="hero-nav" aria-label="Main navigation">
-        {/* Logo */}
-        <a href="/" className="hero-logo" aria-label="Trend Ads home">
-          <span className="hero-logo-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <circle cx="14" cy="14" r="13" stroke="white" strokeWidth="2" />
-              <path d="M9 9L19 14L9 19V9Z" fill="white" />
-            </svg>
-          </span>
-          <span className="hero-logo-text">TREND ADS</span>
-        </a>
-
-        {/* Links */}
-        <ul className="hero-nav-links" role="list">
-          {NAV_LINKS.map((link) => (
-            <li key={link}>
-              <a
-                href={`#${link.toLowerCase().replace(" ", "-")}`}
-                className="hero-nav-link"
-              >
-                {link}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* CTA button */}
-        <a href="#contact" id="hero-contact-cta" className="hero-nav-cta">
-          Contact Us
-        </a>
-      </nav>
+      {/* ── Navigation Component ── */}
+      <Navbar />
 
       {/* ── Social proof badge ── */}
       <div className="hero-social-proof" aria-label="Social proof">
@@ -80,7 +50,7 @@ export default function HeroSection() {
 
       {/* ── Big typographic brand name (background text) ── */}
       <div className="hero-brand-bg" aria-hidden="true">
-        TREND
+        TREND ADS
       </div>
 
       {/* ── Centre model image ── */}
