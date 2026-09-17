@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export interface NavItem {
   label: string;
@@ -19,9 +19,32 @@ export const NAV_ITEMS: NavItem[] = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY =
+        window.scrollY ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0;
+      setIsScrolled(scrollY > 20);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    document.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="hero-nav" aria-label="Main navigation">
+    <nav
+      className={`hero-nav ${isScrolled ? "is-scrolled" : ""}`}
+      aria-label="Main navigation"
+    >
       {/* Brand Logo */}
       <Link href="/" className="hero-logo" aria-label="Trend Ads home">
         <Image 

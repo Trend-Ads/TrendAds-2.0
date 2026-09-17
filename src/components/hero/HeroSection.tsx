@@ -3,8 +3,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import Navbar from "@/components/navigation/Navbar";
-
 export default function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -27,9 +25,6 @@ export default function HeroSection() {
 
       {/* ── Subtle grid overlay ── */}
       <div className="hero-grid" aria-hidden="true" />
-
-      {/* ── Navigation Component ── */}
-      <Navbar />
 
       {/* ── Social proof badge ── */}
       <div className="hero-social-proof" aria-label="Social proof">

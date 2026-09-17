@@ -1,4 +1,6 @@
+import Navbar from "@/components/navigation/Navbar";
 import HeroSection from "@/components/hero/HeroSection";
+import AboutSection from "@/components/about/AboutSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +12,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
+      <Navbar />
       <HeroSection />
+      <AboutSection />
     </main>
   );
 }
