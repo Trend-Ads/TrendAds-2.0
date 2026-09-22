@@ -75,6 +75,75 @@ const CASE_STUDIES = [
   },
 ];
 
+const PARTNER_LOGOS = [
+  {
+    id: "crystal",
+    name: "CRYSTAL",
+    sub: "creative gems",
+    isLower: false,
+    icon: (
+      <svg className="w-7 h-7 text-slate-700" viewBox="0 0 24 24" fill="currentColor">
+        <polygon points="12 2 2 8.5 5.5 22 18.5 22 22 8.5 12 2" opacity="0.85" />
+      </svg>
+    ),
+  },
+  {
+    id: "supreme",
+    name: "SUPREME",
+    sub: "creative letters",
+    isLower: false,
+    icon: (
+      <div className="w-7 h-7 bg-slate-800 rounded-md flex items-center justify-center text-white font-black text-sm italic">
+        S
+      </div>
+    ),
+  },
+  {
+    id: "business",
+    name: "BUSINESS",
+    sub: "commercial property",
+    isLower: false,
+    icon: (
+      <div className="w-7 h-7 rounded-full border-2 border-slate-700 flex items-center justify-center">
+        <div className="w-3 h-3 bg-slate-700 rounded-xs transform rotate-45" />
+      </div>
+    ),
+  },
+  {
+    id: "greenlab",
+    name: "greenlab",
+    sub: "biotechnology",
+    isLower: true,
+    icon: (
+      <svg className="w-7 h-7 text-slate-700" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2a1 1 0 0 1 1 1v3.1a8 8 0 1 1-2 0V3a1 1 0 0 1 1-1z" opacity="0.75" />
+      </svg>
+    ),
+  },
+  {
+    id: "butterfly",
+    name: "butterfly",
+    sub: "creative beauty",
+    isLower: true,
+    icon: (
+      <svg className="w-7 h-7 text-slate-700" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 4c-1.5-2-4-2.5-6-1-2.5 2-2 5.5 0 8 1 1.5 3 2.5 6 3 3-.5 5-1.5 6-3 2-2.5 2.5-6 0-8-2-1.5-4.5-1-6 1z" opacity="0.8" />
+      </svg>
+    ),
+  },
+  {
+    id: "birdwings",
+    name: "birdwings",
+    sub: "creative design",
+    isLower: true,
+    icon: (
+      <svg className="w-7 h-7 text-slate-700" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21 5c-5 0-9 4-11 8-1.5-3-4-5-8-6 2 4 4 7 8 9 4-1 8-5 11-11z" />
+      </svg>
+    ),
+  },
+];
+
 export default function AboutSection() {
   // Phone State
   const [activeTab, setActiveTab] = useState<"home" | "services" | "campaigns" | "analytics" | "chat">("home");
@@ -699,96 +768,29 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* ── Partner / Client Brand Logos ── */}
-        <div className="mt-28 lg:mt-36 flex flex-wrap justify-between items-center gap-8 px-4 opacity-75 grayscale hover:grayscale-0 transition-all duration-300">
-          {/* Logo 1: Crystal */}
-          <div className="flex items-center gap-2.5">
-            <svg className="w-7 h-7 text-slate-700" viewBox="0 0 24 24" fill="currentColor">
-              <polygon points="12 2 2 8.5 5.5 22 18.5 22 22 8.5 12 2" opacity="0.85" />
-            </svg>
-            <div>
-              <span className="font-black tracking-wider text-slate-800 text-sm sm:text-base block uppercase leading-none">
-                CRYSTAL
-              </span>
-              <span className="text-[9px] font-bold tracking-[0.2em] text-slate-400 uppercase block mt-0.5">
-                creative gems
-              </span>
-            </div>
-          </div>
-
-          {/* Logo 2: Supreme */}
-          <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 bg-slate-800 rounded-md flex items-center justify-center text-white font-black text-sm italic">
-              S
-            </div>
-            <div>
-              <span className="font-black tracking-wider text-slate-800 text-sm sm:text-base block uppercase leading-none">
-                SUPREME
-              </span>
-              <span className="text-[9px] font-bold tracking-[0.2em] text-slate-400 uppercase block mt-0.5">
-                creative letters
-              </span>
-            </div>
-          </div>
-
-          {/* Logo 3: Business */}
-          <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-full border-2 border-slate-700 flex items-center justify-center">
-              <div className="w-3 h-3 bg-slate-700 rounded-xs transform rotate-45" />
-            </div>
-            <div>
-              <span className="font-black tracking-wider text-slate-800 text-sm sm:text-base block uppercase leading-none">
-                BUSINESS
-              </span>
-              <span className="text-[9px] font-bold tracking-[0.2em] text-slate-400 uppercase block mt-0.5">
-                commercial property
-              </span>
-            </div>
-          </div>
-
-          {/* Logo 4: Greenlab */}
-          <div className="flex items-center gap-2.5">
-            <svg className="w-7 h-7 text-slate-700" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2a1 1 0 0 1 1 1v3.1a8 8 0 1 1-2 0V3a1 1 0 0 1 1-1z" opacity="0.75" />
-            </svg>
-            <div>
-              <span className="font-black tracking-wider text-slate-800 text-sm sm:text-base block leading-none">
-                greenlab
-              </span>
-              <span className="text-[9px] font-bold tracking-[0.2em] text-slate-400 uppercase block mt-0.5">
-                biotechnology
-              </span>
-            </div>
-          </div>
-
-          {/* Logo 5: Butterfly */}
-          <div className="flex items-center gap-2.5">
-            <svg className="w-7 h-7 text-slate-700" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 4c-1.5-2-4-2.5-6-1-2.5 2-2 5.5 0 8 1 1.5 3 2.5 6 3 3-.5 5-1.5 6-3 2-2.5 2.5-6 0-8-2-1.5-4.5-1-6 1z" opacity="0.8" />
-            </svg>
-            <div>
-              <span className="font-black tracking-wider text-slate-800 text-sm sm:text-base block leading-none">
-                butterfly
-              </span>
-              <span className="text-[9px] font-bold tracking-[0.2em] text-slate-400 uppercase block mt-0.5">
-                creative beauty
-              </span>
-            </div>
-          </div>
-
-          {/* Logo 6: Birdwings */}
-          <div className="flex items-center gap-2.5">
-            <svg className="w-7 h-7 text-slate-700" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M21 5c-5 0-9 4-11 8-1.5-3-4-5-8-6 2 4 4 7 8 9 4-1 8-5 11-11z" />
-            </svg>
-            <div>
-              <span className="font-black tracking-wider text-slate-800 text-sm sm:text-base block leading-none">
-                birdwings
-              </span>
-              <span className="text-[9px] font-bold tracking-[0.2em] text-slate-400 uppercase block mt-0.5">
-                creative design
-              </span>
-            </div>
+        {/* ── Partner / Client Brand Logos (Flowing Animated Ribbon) ── */}
+        <div className="mt-28 lg:mt-36 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] py-2">
+          <div className="animate-marquee-flow flex items-center gap-14 sm:gap-20 lg:gap-28 pr-14 sm:pr-20 lg:pr-28">
+            {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((logo, idx) => (
+              <div
+                key={`${logo.id}-${idx}`}
+                className="flex items-center gap-2.5 shrink-0 opacity-75 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+              >
+                {logo.icon}
+                <div>
+                  <span
+                    className={`font-black tracking-wider text-slate-800 text-sm sm:text-base block leading-none ${
+                      logo.isLower ? "" : "uppercase"
+                    }`}
+                  >
+                    {logo.name}
+                  </span>
+                  <span className="text-[9px] font-bold tracking-[0.2em] text-slate-400 uppercase block mt-0.5">
+                    {logo.sub}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

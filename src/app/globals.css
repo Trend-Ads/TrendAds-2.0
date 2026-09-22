@@ -644,3 +644,27 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ─────────────────────────────────────────
+   Continuous Flowing Marquee
+───────────────────────────────────────── */
+@keyframes marqueeFlow {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-flow {
+  display: flex;
+  width: max-content;
+  animation: marqueeFlow 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-flow:hover {
+  animation-play-state: paused;
+}
+

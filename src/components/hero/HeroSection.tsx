@@ -54,11 +54,11 @@ export default function HeroSection() {
         style={{ transform: `translate(-50%, ${scrollY * 0.08}px)` }}
       >
         <Image
-          src="/heros/hero-image.png"
-          alt="Futuristic model with VR headset representing bold digital creativity"
+          src="/heros/hero-p-1.png"
+          alt="Futuristic model representing bold digital creativity"
           fill
           priority
-          className="hero-model-img"
+          className="hero-model-img select-none pointer-events-none"
           sizes="(max-width: 768px) 100vw, 60vw"
         />
       </div>

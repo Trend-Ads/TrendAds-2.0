@@ -110,61 +110,7 @@ export default function FindServicesSection() {
               workers for your projects.
             </p>
 
-            {/* App Store / Google Play Buttons */}
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3.5">
-              {/* Google Play */}
-              <a
-                href="#download"
-                className="inline-flex items-center gap-2.5 bg-black text-white px-4 py-2 rounded-xl shadow-md hover:bg-slate-900 hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 border border-white/10"
-              >
-                {/* Google Play Color Triangle Icon */}
-                <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
-                  <path
-                    d="M3.609 1.814L13.792 12 3.61 22.186a2.008 2.008 0 01-.61-1.428V3.242c0-.547.221-1.043.609-1.428z"
-                    fill="#2196F3"
-                  />
-                  <path
-                    d="M17.208 8.584l-3.416 3.416 3.416 3.416 3.864-2.222c.628-.36.628-1.428 0-1.788l-3.864-2.222z"
-                    fill="#FFC107"
-                  />
-                  <path
-                    d="M3.609 1.814l10.183 10.186 3.416-3.416L6.036.758C5.234.3 4.269.7 3.609 1.814z"
-                    fill="#4CAF50"
-                  />
-                  <path
-                    d="M3.609 22.186l13.599-7.826-3.416-3.416L3.61 21.13c.66 1.114 1.625 1.514 2.427 1.056l11.171-6.426z"
-                    fill="#F44336"
-                  />
-                </svg>
-                <div className="text-left leading-tight">
-                  <span className="text-[8px] uppercase tracking-wider block text-slate-300 font-semibold">
-                    GET IT ON
-                  </span>
-                  <span className="text-xs sm:text-[13px] font-bold text-white block">
-                    Google Play
-                  </span>
-                </div>
-              </a>
 
-              {/* App Store */}
-              <a
-                href="#download"
-                className="inline-flex items-center gap-2.5 bg-black text-white px-4 py-2 rounded-xl shadow-md hover:bg-slate-900 hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 border border-white/10"
-              >
-                {/* Apple Icon */}
-                <svg className="w-5 h-5 fill-white shrink-0" viewBox="0 0 24 24">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.08 1.73-.95 2.76 1.01.08 2.05-.51 2.68-1.26z" />
-                </svg>
-                <div className="text-left leading-tight">
-                  <span className="text-[8px] tracking-wider block text-slate-300 font-semibold">
-                    Download on the
-                  </span>
-                  <span className="text-xs sm:text-[13px] font-bold text-white block">
-                    App Store
-                  </span>
-                </div>
-              </a>
-            </div>
           </div>
 
           {/* ════════ RIGHT FLOATING AVATARS ════════ */}

@@ -4,6 +4,7 @@ import AboutSection from "@/components/about/AboutSection";
 import FindServicesSection from "@/components/services/FindServicesSection";
 import ServicesHorizontalSection from "@/components/services/ServicesHorizontalSection";
 import BoardMembersSection from "@/components/board/BoardMembersSection";
+import StepsSection from "@/components/steps/StepsSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,6 +22,8 @@ export default function Home() {
       <FindServicesSection />
       <ServicesHorizontalSection />
       <BoardMembersSection />
+      <StepsSection />
     </main>
   );
 }
+
