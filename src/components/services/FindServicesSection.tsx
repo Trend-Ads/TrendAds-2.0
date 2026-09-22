@@ -6,7 +6,7 @@ import React from "react";
 export default function FindServicesSection() {
   return (
     <section
-      id="services"
+      id="find-services"
       className="bg-[#faf8f5] py-10 sm:py-14 lg:py-16 relative overflow-hidden flex items-center justify-center min-h-[50vh]"
     >
       {/* Background SVG decorative curved connection lines */}

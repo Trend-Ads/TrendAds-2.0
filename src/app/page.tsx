@@ -2,6 +2,7 @@ import Navbar from "@/components/navigation/Navbar";
 import HeroSection from "@/components/hero/HeroSection";
 import AboutSection from "@/components/about/AboutSection";
 import FindServicesSection from "@/components/services/FindServicesSection";
+import ServicesHorizontalSection from "@/components/services/ServicesHorizontalSection";
 import BoardMembersSection from "@/components/board/BoardMembersSection";
 import type { Metadata } from "next";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <FindServicesSection />
+      <ServicesHorizontalSection />
       <BoardMembersSection />
     </main>
   );
