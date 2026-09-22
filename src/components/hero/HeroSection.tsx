@@ -82,8 +82,8 @@ export default function HeroSection() {
         </p>
       </div>
 
-      {/* ── Bottom-right "Start Your Project" card ── */}
-      <div className="hero-cta-card" id="hero-project-card">
+      {/* ── Bottom-right "Start Your Project" card (Hidden on mobile) ── */}
+      <div className="hero-cta-card hidden md:block" id="hero-project-card">
         <p className="hero-cta-title">Start Your Project</p>
         <p className="hero-cta-sub">
           Drop your email and we&apos;ll get in touch within 24 hours.

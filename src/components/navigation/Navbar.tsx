@@ -46,13 +46,13 @@ export default function Navbar() {
       aria-label="Main navigation"
     >
       {/* Brand Logo */}
-      <Link href="/" className="hero-logo" aria-label="Trend Ads home">
+      <Link href="/" className="hero-logo shrink-0" aria-label="Trend Ads home">
         <Image 
           src="/logos/logo.png"
           alt="Trend Ads Logo"
-          width={140}
-          height={40}
-          className="object-contain"
+          width={130}
+          height={38}
+          className="object-contain w-auto h-7 sm:h-9"
           priority
         />
       </Link>
@@ -69,15 +69,15 @@ export default function Navbar() {
       </ul>
 
       {/* Action / Contact CTA Button */}
-      <div className="hero-nav-actions">
-        <a href="#contact" id="hero-contact-cta" className="hero-nav-cta">
+      <div className="hero-nav-actions shrink-0">
+        <a href="#contact" id="hero-contact-cta" className="hero-nav-cta hidden sm:inline-flex">
           Contact
         </a>
 
         {/* Mobile Hamburger Button */}
         <button
           type="button"
-          className="hero-mobile-toggle"
+          className="hero-mobile-toggle shrink-0"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
           onClick={() => setMobileMenuOpen((prev) => !prev)}
