@@ -8,6 +8,7 @@ import BoardMembersSection from "@/components/board/BoardMembersSection";
 import StepsSection from "@/components/steps/StepsSection";
 import ContactSection from "@/components/contact/ContactSection";
 import Footer from "@/components/footer/Footer";
+import FloatingContactButtons from "@/components/floating/FloatingContactButtons";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function Home() {
       <StepsSection />
       <ContactSection />
       <Footer />
+      <FloatingContactButtons />
     </main>
   );
 }

@@ -245,8 +245,8 @@ export default function Navbar() {
               </a>
 
               <div className="flex items-center justify-between text-xs text-slate-500 font-mono pt-1">
-                <a href="mailto:hello@trendads.agency" className="hover:text-[#0D7377] transition-colors">
-                  hello@trendads.agency
+                <a href="mailto:trendads.in@gmail.com" className="hover:text-[#1B2CC1] transition-colors">
+                  trendads.in@gmail.com
                 </a>
                 <span>© 2026 Trend Ads</span>
               </div>
