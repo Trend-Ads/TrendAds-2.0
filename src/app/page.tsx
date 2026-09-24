@@ -9,14 +9,6 @@ import StepsSection from "@/components/steps/StepsSection";
 import ContactSection from "@/components/contact/ContactSection";
 import Footer from "@/components/footer/Footer";
 import FloatingContactButtons from "@/components/floating/FloatingContactButtons";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Trend Ads — Creative Advertising Agency",
-  description:
-    "A creative studio crafting bold digital products, brand systems, and experiences that drive real growth.",
-};
-
 export default function Home() {
   return (
     <main>

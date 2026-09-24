@@ -173,7 +173,7 @@ export default function FindServicesSection() {
             >
               <Image
                 src={src}
-                alt="Worker avatar"
+                alt={`Vetted digital specialist ${i + 1}`}
                 width={48}
                 height={48}
                 className="w-full h-full object-cover"

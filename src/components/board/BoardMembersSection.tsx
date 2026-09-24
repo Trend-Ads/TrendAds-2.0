@@ -706,11 +706,12 @@ export default function BoardMembersSection() {
                         />
                         <Image
                           src={selectedMember.image}
-                          alt={selectedMember.name}
+                          alt={`${selectedMember.name} - ${selectedMember.role} at Trend Ads`}
                           width={340}
                           height={400}
                           priority
                           className="relative z-10 max-h-full w-auto object-contain object-bottom filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.85)]"
+                          style={{ width: "auto", height: "auto" }}
                         />
                         <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#090c19] to-transparent z-10" />
                       </div>

@@ -32,10 +32,11 @@ export default function Footer() {
               >
                 <Image
                   src="/logos/logo.png"
-                  alt="Trend Ads Logo"
+                  alt="Trend Ads - Creative Advertising & Digital Growth Agency"
                   width={150}
                   height={44}
                   className="object-contain w-auto h-8 sm:h-9 transition-transform duration-300 group-hover:scale-[1.02]"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </Link>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm font-normal">
@@ -82,7 +83,7 @@ export default function Footer() {
               >
                 <Image
                   src="/icons/linkedin.png"
-                  alt="LinkedIn"
+                  alt="Trend Ads on LinkedIn"
                   width={32}
                   height={32}
                   className="w-full h-full object-cover"
@@ -100,7 +101,7 @@ export default function Footer() {
               >
                 <Image
                   src="/icons/instagram.png"
-                  alt="Instagram"
+                  alt="Trend Ads on Instagram"
                   width={32}
                   height={32}
                   className="w-full h-full object-cover"
@@ -118,7 +119,7 @@ export default function Footer() {
               >
                 <Image
                   src="/icons/facebook.png"
-                  alt="Facebook"
+                  alt="Trend Ads on Facebook"
                   width={32}
                   height={32}
                   className="w-full h-full object-cover"
@@ -183,7 +184,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[#14FFEC] transition-colors">
+                <a href="#about-us" className="hover:text-[#14FFEC] transition-colors">
                   About Us
                 </a>
               </li>
@@ -193,18 +194,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#board" className="hover:text-[#14FFEC] transition-colors">
+                <a href="#board-members" className="hover:text-[#14FFEC] transition-colors">
                   Board & Leadership
                 </a>
               </li>
               <li>
-                <a href="#steps" className="hover:text-[#14FFEC] transition-colors">
+                <a href="#process-steps" className="hover:text-[#14FFEC] transition-colors">
                   Workflow Roadmap
                 </a>
               </li>
               <li>
-                <a href="#blogs" className="hover:text-[#14FFEC] transition-colors">
-                  Blogs
+                <a href="#services" className="hover:text-[#14FFEC] transition-colors">
+                  Case Studies & Insights
                 </a>
               </li>
               <li>

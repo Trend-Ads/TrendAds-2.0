@@ -201,7 +201,7 @@ export default function ContactSection() {
                     >
                       <Image
                         src="/icons/linkedin.png"
-                        alt="LinkedIn"
+                        alt="Trend Ads LinkedIn Profile"
                         width={32}
                         height={32}
                         className="w-full h-full object-cover"
@@ -219,7 +219,7 @@ export default function ContactSection() {
                     >
                       <Image
                         src="/icons/instagram.png"
-                        alt="Instagram"
+                        alt="Trend Ads Instagram Profile"
                         width={32}
                         height={32}
                         className="w-full h-full object-cover"
@@ -237,7 +237,7 @@ export default function ContactSection() {
                     >
                       <Image
                         src="/icons/facebook.png"
-                        alt="Facebook"
+                        alt="Trend Ads Facebook Profile"
                         width={32}
                         height={32}
                         className="w-full h-full object-cover"

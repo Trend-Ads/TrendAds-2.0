@@ -152,11 +152,12 @@ export default function WebsiteLoadingScreen({
                 <div className="relative w-44 sm:w-60 h-14 sm:h-16 flex items-center justify-center">
                   <Image
                     src="/logos/logo.png"
-                    alt="Trend Ads Logo"
+                    alt="Trend Ads - Creative Advertising & Digital Growth Agency"
                     width={240}
                     height={64}
                     priority
                     className="object-contain filter drop-shadow-[0_4px_16px_rgba(0,0,0,0.08)]"
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
               </motion.div>
@@ -219,6 +220,7 @@ export default function WebsiteLoadingScreen({
                       width={22}
                       height={22}
                       className="object-contain w-auto h-auto max-w-[20px] max-h-[20px]"
+                      style={{ width: "auto", height: "auto" }}
                     />
                   </motion.div>
                 ))}

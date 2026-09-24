@@ -1,0 +1,36 @@
+# Trend Ads
+
+> Trend Ads (https://trend-ads.com) is a high-impact creative advertising and digital engineering studio based in Thrissur, Kerala, India, delivering global client solutions. We engineer category-defining brand identities, high-ROAS paid media systems (Meta, Google, TikTok), high-converting Next.js digital platforms, and viral commercial content.
+
+## Agency Overview
+- **Name**: Trend Ads
+- **Official Domain**: https://trend-ads.com
+- **Alternative Domain**: https://www.trend-ads.com (redirects to canonical)
+- **Headquarters**: Thrissur, Kerala, India
+- **Global Coverage**: India, United States, United Kingdom, United Arab Emirates, Global
+- **Direct Phone**: +91 9746730297
+- **WhatsApp Support**: https://wa.me/918139860663 (+91 8139860663)
+- **Official Inquiries**: trendads.in@gmail.com
+- **Instagram**: https://instagram.com/trend_ads.in
+- **Facebook**: https://www.facebook.com/share/19LfTQbxNp/
+
+## Core Services & Disciplines
+- **Paid Ads & Performance Scaling**: Data-driven customer acquisition on Meta Ads (Facebook/Instagram), Google Search/Performance Max, and TikTok Ads with proven 4.8x average ROAS.
+- **Next.js Web Engineering & Digital Products**: Ultra-fast, SEO-optimized, highly responsive web platforms engineered with Next.js, React 19, and Tailwind CSS.
+- **Brand Strategy & Visual Systems**: Distinctive visual identities, typographic guidelines, design systems, and category positioning.
+- **Viral Content & Video Production**: High-retention short-form video, creative commercial production, and conversion copywriting.
+- **Full-Funnel CRO & Analytics**: Heatmap analysis, landing page conversion rate optimization, and behavioral event tracking.
+
+## Verified Results & Metrics
+- **100+** projects delivered across international markets
+- **4.8x** average verified client Return On Ad Spend (ROAS)
+- **3.2x** average conversion rate increase on engineered landing pages
+- **99.8%** client satisfaction score
+
+## Navigation & Sections
+- [Home](https://trend-ads.com/#hero): Hero introduction & immediate project brief calculator.
+- [About Us](https://trend-ads.com/#about-us): Interactive studio dashboard, live portfolio, and ROAS simulator.
+- [Services](https://trend-ads.com/#services): Detailed capabilities, deliverables, and service breakdown.
+- [Board & Leadership](https://trend-ads.com/#board-members): Executive council and key directors.
+- [Process Steps](https://trend-ads.com/#process-steps): 4-phase agile delivery roadmap from discovery to viral scale.
+- [Contact](https://trend-ads.com/#contact): Direct quote request, WhatsApp chat, and telephone outreach.

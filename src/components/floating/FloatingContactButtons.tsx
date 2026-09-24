@@ -155,7 +155,7 @@ export default function FloatingContactButtons() {
           {/* WhatsApp Icon */}
           <Image
             src="/icons/whatsapp.png"
-            alt="WhatsApp"
+            alt="Contact Trend Ads via WhatsApp"
             width={56}
             height={56}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
