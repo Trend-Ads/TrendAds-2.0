@@ -40,6 +40,7 @@ export default function ContactSection() {
     "Branding & 3D Motion",
     "Software & Digital Growth",
     "Creative Strategy & Production",
+    "Others",
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
