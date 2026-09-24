@@ -189,7 +189,7 @@ export default function AboutSection() {
       <div
         className="absolute inset-0 pointer-events-none opacity-40"
         style={{
-          backgroundImage: "radial-gradient(#f1a380 1.2px, transparent 1.2px)",
+          backgroundImage: "radial-gradient(rgba(35, 115, 244, 0.25) 1.2px, transparent 1.2px)",
           backgroundSize: "22px 22px",
           maskImage:
             "radial-gradient(ellipse 65% 55% at 50% 40%, black 20%, transparent 85%)",
@@ -199,8 +199,8 @@ export default function AboutSection() {
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-        {/* ── Main Orange Card ── */}
-        <div className="bg-gradient-to-br from-[#ff5419] to-[#f44306] rounded-[44px] px-8 sm:px-12 lg:px-16 py-14 lg:py-20 flex flex-col lg:flex-row items-center justify-between relative mt-16 lg:mt-24 shadow-[0_24px_60px_-12px_rgba(244,67,6,0.38)] min-h-[460px]">
+        {/* ── Main #2373F4 Card ── */}
+        <div className="bg-gradient-to-br from-[#2373F4] to-[#185ed1] rounded-[44px] px-8 sm:px-12 lg:px-16 py-14 lg:py-20 flex flex-col lg:flex-row items-center justify-between relative mt-16 lg:mt-24 shadow-[0_24px_60px_-12px_rgba(35,115,244,0.4)] min-h-[460px]">
           {/* Left Column: About Us */}
           <div className="w-full lg:w-[32%] text-white z-10 mb-14 lg:mb-0">
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-5 text-white">
@@ -213,7 +213,7 @@ export default function AboutSection() {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center bg-white text-slate-900 font-bold text-sm px-7 py-3.5 rounded-xl shadow-md hover:bg-slate-50 hover:shadow-lg transition-all duration-200"
+              className="inline-flex items-center justify-center bg-white text-[#2373F4] font-bold text-sm px-7 py-3.5 rounded-xl shadow-md hover:bg-slate-50 hover:shadow-lg transition-all duration-200"
             >
               Contact us
             </a>
@@ -237,7 +237,7 @@ export default function AboutSection() {
                   >
                     {islandExpanded ? (
                       <div className="flex items-center justify-between w-full text-[9px] font-bold">
-                        <span className="text-orange-400">⚡ ROAS Live: 4.8x</span>
+                        <span className="text-sky-300">⚡ ROAS Live: 4.8x</span>
                         <span className="text-[8px] bg-white/20 px-1 rounded">Active</span>
                       </div>
                     ) : (
@@ -261,7 +261,7 @@ export default function AboutSection() {
                 {/* ── User Header ── */}
                 <div className="px-5 pt-1.5 pb-2 flex items-center justify-between bg-[#f8f9fb]">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#ff5419] to-amber-400 border-2 border-white shadow-sm flex items-center justify-center font-bold text-[11px] text-white">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#2373F4] to-cyan-400 border-2 border-white shadow-sm flex items-center justify-center font-bold text-[11px] text-white">
                       TA
                     </div>
                     <div>
@@ -274,12 +274,12 @@ export default function AboutSection() {
                   </div>
                   <button
                     onClick={() => setIslandExpanded((prev) => !prev)}
-                    className="w-7 h-7 rounded-full bg-white shadow-xs border border-slate-100 flex items-center justify-center text-slate-600 relative hover:bg-orange-50 transition-colors"
+                    className="w-7 h-7 rounded-full bg-white shadow-xs border border-slate-100 flex items-center justify-center text-slate-600 relative hover:bg-blue-50 transition-colors"
                   >
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                     </svg>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff5419] absolute top-1.5 right-1.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2373F4] absolute top-1.5 right-1.5" />
                   </button>
                 </div>
 
@@ -324,7 +324,7 @@ export default function AboutSection() {
                               setSearchQuery("");
                             }}
                             className={`text-[10px] font-bold ${
-                              activeCategory === "all" ? "text-[#ff5419]" : "text-slate-400"
+                              activeCategory === "all" ? "text-[#2373F4]" : "text-slate-400"
                             }`}
                           >
                             All
@@ -344,8 +344,8 @@ export default function AboutSection() {
                                 onClick={() => setActiveCategory(isSelected ? "all" : cat.id)}
                                 className={`rounded-xl p-1.5 flex flex-col items-center justify-center transition-all duration-200 border ${
                                   isSelected
-                                    ? "bg-[#ff5419] text-white border-[#ff5419] shadow-sm scale-[1.02]"
-                                    : "bg-white text-slate-700 border-slate-100 hover:border-orange-200 shadow-2xs"
+                                    ? "bg-[#2373F4] text-white border-[#2373F4] shadow-sm scale-[1.02]"
+                                    : "bg-white text-slate-700 border-slate-100 hover:border-blue-200 shadow-2xs"
                                 }`}
                               >
                                 <span className="text-base mb-0.5">{cat.icon}</span>
@@ -393,15 +393,15 @@ export default function AboutSection() {
                             <div
                               key={service.id}
                               onClick={() => setActiveTab("services")}
-                              className="bg-white p-2.5 rounded-xl border border-slate-100 hover:border-orange-200 transition-all cursor-pointer shadow-2xs group flex items-start justify-between gap-2"
+                              className="bg-white p-2.5 rounded-xl border border-slate-100 hover:border-blue-200 transition-all cursor-pointer shadow-2xs group flex items-start justify-between gap-2"
                             >
                               <div className="flex items-start gap-2 min-w-0">
-                                <span className="text-xl bg-orange-50 w-8 h-8 rounded-lg flex items-center justify-center shrink-0">
+                                <span className="text-xl bg-blue-50 w-8 h-8 rounded-lg flex items-center justify-center shrink-0">
                                   {service.icon}
                                 </span>
                                 <div className="min-w-0">
                                   <div className="flex items-center gap-1.5">
-                                    <h4 className="text-[11px] font-bold text-slate-800 truncate group-hover:text-[#ff5419] transition-colors">
+                                    <h4 className="text-[11px] font-bold text-slate-800 truncate group-hover:text-[#2373F4] transition-colors">
                                       {service.title}
                                     </h4>
                                   </div>
@@ -410,7 +410,7 @@ export default function AboutSection() {
                                   </p>
                                 </div>
                               </div>
-                              <span className="text-[8.5px] font-extrabold text-[#ff5419] bg-orange-50 px-1.5 py-0.5 rounded shrink-0">
+                              <span className="text-[8.5px] font-extrabold text-[#2373F4] bg-blue-50 px-1.5 py-0.5 rounded shrink-0">
                                 {service.metric}
                               </span>
                             </div>
@@ -426,7 +426,7 @@ export default function AboutSection() {
                           </h3>
                           <button
                             onClick={() => setActiveTab("campaigns")}
-                            className="text-[10px] font-semibold text-[#ff5419]"
+                            className="text-[10px] font-semibold text-[#2373F4]"
                           >
                             View all
                           </button>
@@ -436,7 +436,7 @@ export default function AboutSection() {
                             <div
                               key={cs.client}
                               onClick={() => setActiveTab("campaigns")}
-                              className="bg-white p-2 rounded-xl border border-slate-100 shadow-2xs hover:border-orange-200 cursor-pointer"
+                              className="bg-white p-2 rounded-xl border border-slate-100 shadow-2xs hover:border-blue-200 cursor-pointer"
                             >
                               <div className="flex items-center gap-1 mb-1">
                                 <span className="text-sm">{cs.emoji}</span>
@@ -461,7 +461,7 @@ export default function AboutSection() {
                         <h3 className="text-xs font-extrabold text-slate-900 uppercase">
                           Our Agency Stack
                         </h3>
-                        <span className="text-[9px] bg-orange-100 text-[#ff5419] font-bold px-1.5 py-0.5 rounded-full">
+                        <span className="text-[9px] bg-blue-100 text-[#2373F4] font-bold px-1.5 py-0.5 rounded-full">
                           4 Core Disciplines
                         </span>
                       </div>
@@ -472,7 +472,7 @@ export default function AboutSection() {
                         >
                           <div className="flex items-center justify-between">
                             <span className="text-xl">{serv.icon}</span>
-                            <span className="text-[9px] font-black text-[#ff5419] bg-orange-50 px-2 py-0.5 rounded-full">
+                            <span className="text-[9px] font-black text-[#2373F4] bg-blue-50 px-2 py-0.5 rounded-full">
                               {serv.metric}
                             </span>
                           </div>
@@ -520,11 +520,11 @@ export default function AboutSection() {
                             </span>
                           </div>
                           <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                            <div className="h-full bg-gradient-to-r from-orange-500 to-emerald-500 w-[85%]" />
+                            <div className="h-full bg-gradient-to-r from-[#2373F4] to-emerald-500 w-[85%]" />
                           </div>
                           <div className="flex justify-between text-[8px] text-slate-500 font-medium">
                             <span>Channel: {cs.tag}</span>
-                            <span className="text-[#ff5419] font-bold">Target Exceeded</span>
+                            <span className="text-[#2373F4] font-bold">Target Exceeded</span>
                           </div>
                         </div>
                       ))}
@@ -538,7 +538,7 @@ export default function AboutSection() {
                         <h3 className="text-xs font-extrabold text-slate-900 uppercase">
                           Agency Benchmarks
                         </h3>
-                        <span className="text-[9px] font-bold text-[#ff5419]">Live Dashboard</span>
+                        <span className="text-[9px] font-bold text-[#2373F4]">Live Dashboard</span>
                       </div>
 
                       <div className="grid grid-cols-2 gap-2">
@@ -564,14 +564,14 @@ export default function AboutSection() {
                           <span className="text-[10px] font-bold text-slate-800">
                             Ad Spend Efficiency
                           </span>
-                          <span className="text-[9px] font-bold text-[#ff5419]">Q1–Q4 Growth</span>
+                          <span className="text-[9px] font-bold text-[#2373F4]">Q1–Q4 Growth</span>
                         </div>
                         <div className="h-16 flex items-end gap-2 justify-between pt-2 px-1">
                           {[35, 55, 70, 92, 115].map((h, i) => (
                             <div key={i} className="flex-1 flex flex-col items-center gap-1">
                               <div
                                 style={{ height: `${(h / 115) * 44}px` }}
-                                className="w-full rounded-t-sm bg-gradient-to-t from-orange-400 to-[#ff5419]"
+                                className="w-full rounded-t-sm bg-gradient-to-t from-blue-400 to-[#2373F4]"
                               />
                               <span className="text-[7.5px] text-slate-400">M{i + 1}</span>
                             </div>
@@ -603,7 +603,7 @@ export default function AboutSection() {
                             <div
                               className={`max-w-[85%] text-[9.5px] p-2 rounded-xl leading-relaxed ${
                                 msg.sender === "user"
-                                  ? "bg-[#ff5419] text-white rounded-br-xs"
+                                  ? "bg-[#2373F4] text-white rounded-br-xs"
                                   : "bg-white text-slate-800 border border-slate-100 rounded-bl-xs shadow-2xs"
                               }`}
                             >
@@ -621,7 +621,7 @@ export default function AboutSection() {
                             <button
                               key={prompt}
                               onClick={() => handleSendChat(prompt)}
-                              className="text-[8px] bg-white border border-slate-200 text-slate-700 px-2 py-1 rounded-full font-bold hover:bg-orange-50 hover:text-[#ff5419] hover:border-orange-200 transition-colors"
+                              className="text-[8px] bg-white border border-slate-200 text-slate-700 px-2 py-1 rounded-full font-bold hover:bg-blue-50 hover:text-[#2373F4] hover:border-blue-200 transition-colors"
                             >
                               {prompt}
                             </button>
@@ -645,7 +645,7 @@ export default function AboutSection() {
                       </p>
                       <button
                         onClick={() => setShowBookModal(false)}
-                        className="w-full bg-[#ff5419] text-white font-bold text-[10px] py-1.5 rounded-lg shadow-xs"
+                        className="w-full bg-[#2373F4] text-white font-bold text-[10px] py-1.5 rounded-lg shadow-xs"
                       >
                         Back to App
                       </button>
@@ -659,7 +659,7 @@ export default function AboutSection() {
                   <button
                     onClick={() => setActiveTab("home")}
                     className={`flex flex-col items-center transition-colors ${
-                      activeTab === "home" ? "text-[#ff5419]" : "text-slate-400 hover:text-slate-600"
+                      activeTab === "home" ? "text-[#2373F4]" : "text-slate-400 hover:text-slate-600"
                     }`}
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -672,7 +672,7 @@ export default function AboutSection() {
                   <button
                     onClick={() => setActiveTab("services")}
                     className={`flex flex-col items-center transition-colors ${
-                      activeTab === "services" ? "text-[#ff5419]" : "text-slate-400 hover:text-slate-600"
+                      activeTab === "services" ? "text-[#2373F4]" : "text-slate-400 hover:text-slate-600"
                     }`}
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -685,7 +685,7 @@ export default function AboutSection() {
                   <button
                     onClick={() => setActiveTab("campaigns")}
                     className={`flex flex-col items-center transition-colors ${
-                      activeTab === "campaigns" ? "text-[#ff5419]" : "text-slate-400 hover:text-slate-600"
+                      activeTab === "campaigns" ? "text-[#2373F4]" : "text-slate-400 hover:text-slate-600"
                     }`}
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -698,7 +698,7 @@ export default function AboutSection() {
                   <button
                     onClick={() => setActiveTab("analytics")}
                     className={`flex flex-col items-center transition-colors ${
-                      activeTab === "analytics" ? "text-[#ff5419]" : "text-slate-400 hover:text-slate-600"
+                      activeTab === "analytics" ? "text-[#2373F4]" : "text-slate-400 hover:text-slate-600"
                     }`}
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -711,14 +711,14 @@ export default function AboutSection() {
                   <button
                     onClick={() => setActiveTab("chat")}
                     className={`flex flex-col items-center transition-colors relative ${
-                      activeTab === "chat" ? "text-[#ff5419]" : "text-slate-400 hover:text-slate-600"
+                      activeTab === "chat" ? "text-[#2373F4]" : "text-slate-400 hover:text-slate-600"
                     }`}
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                     </svg>
                     <span className="text-[8px] font-medium mt-0.5">Chat</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff5419] absolute -top-0.5 right-1" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2373F4] absolute -top-0.5 right-1" />
                   </button>
                 </div>
               </div>
