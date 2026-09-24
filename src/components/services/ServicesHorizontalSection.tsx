@@ -81,10 +81,10 @@ const SERVICE_CARDS: ServiceCard[] = [
     id: "brand",
     num: 3,
     badge: "03 · CREATIVE",
-    title: "BRAND & 3D",
-    stat: "AWARD-WINNING DESIGN",
-    headline: "Iconic visual identities and photorealistic 3D motion.",
-    categoryEn: "BRANDING & 3D",
+    title: "BRAND & CONTENT",
+    stat: "AWARD-WINNING CREATIVE",
+    headline: "Iconic visual identities, storytelling, and high-impact content creation.",
+    categoryEn: "BRANDING & CONTENT",
     bgColor: "bg-[#091759]",
     numColor: "text-[#223fa8]",
     services: [
@@ -94,12 +94,12 @@ const SERVICE_CARDS: ServiceCard[] = [
         tag: "Identity & Visual DNA",
       },
       {
-        iconId: "3d",
-        title: "3D Motion",
-        tag: "CGI & Product Reels",
+        iconId: "content",
+        title: "Content Creation",
+        tag: "Reels, Video & Creative Copy",
       },
     ],
-    tags: ["Design Systems", "3D Motion", "CGI"],
+    tags: ["Brand Identity", "Content Creation", "Storytelling"],
   },
   {
     id: "software-growth",
@@ -161,9 +161,10 @@ function SubsectionIcon({ id, className = "w-4 h-4" }: { id: string; className?:
         </svg>
       );
     case "3d":
+    case "content":
       return (
         <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
       );
     case "cloud":
@@ -223,6 +224,16 @@ export default function ServicesHorizontalSection() {
   const card4X = useTransform(scrollYProgress, [0.70, 0.92], ["100vw", "0vw"]);
   const card4Rotate = useTransform(scrollYProgress, [0.70, 0.92], [3.5, 0]);
   const card4Scale = useTransform(scrollYProgress, [0.70, 0.92], [0.94, 1]);
+
+  // ── MOBILE HEADER OPACITY (Hides covered card titles on mobile/smaller screens with zero height changes) ──
+  const title1MobileOpacity = useTransform(scrollYProgress, [0, 0.20, 0.28, 1], [1, 1, 0, 0]);
+  const title1MobileVisibility = useTransform(title1MobileOpacity, (v) => (v <= 0.01 ? "hidden" : "visible"));
+
+  const title2MobileOpacity = useTransform(scrollYProgress, [0, 0.45, 0.53, 1], [1, 1, 0, 0]);
+  const title2MobileVisibility = useTransform(title2MobileOpacity, (v) => (v <= 0.01 ? "hidden" : "visible"));
+
+  const title3MobileOpacity = useTransform(scrollYProgress, [0, 0.70, 0.78, 1], [1, 1, 0, 0]);
+  const title3MobileVisibility = useTransform(title3MobileOpacity, (v) => (v <= 0.01 ? "hidden" : "visible"));
 
   // Smooth jump to card
   const jumpToCard = (num: number) => {
@@ -294,7 +305,7 @@ export default function ServicesHorizontalSection() {
                       : c.num === 2
                       ? "Growth & Ads"
                       : c.num === 3
-                      ? "Brand & 3D"
+                      ? "Brand & Content"
                       : "Software"}
                   </span>
                 </button>
@@ -344,6 +355,24 @@ export default function ServicesHorizontalSection() {
                   ? "left-[32px] sm:left-[360px] md:left-[440px] lg:left-[520px]"
                   : "left-[48px] sm:left-[540px] md:left-[660px] lg:left-[780px]";
 
+              const mobileTitleOpacity =
+                idx === 0
+                  ? title1MobileOpacity
+                  : idx === 1
+                  ? title2MobileOpacity
+                  : idx === 2
+                  ? title3MobileOpacity
+                  : undefined;
+
+              const mobileTitleVisibility =
+                idx === 0
+                  ? title1MobileVisibility
+                  : idx === 1
+                  ? title2MobileVisibility
+                  : idx === 2
+                  ? title3MobileVisibility
+                  : undefined;
+
               return (
                 <motion.div
                   key={card.id}
@@ -356,14 +385,33 @@ export default function ServicesHorizontalSection() {
                   }}
                 >
                   <div className="flex flex-col h-full w-[84vw] max-w-[325px] sm:w-[350px] lg:w-[380px] shrink-0">
-                    {/* ── Top Label Above Card ── */}
-                    <div className="mb-2 px-3">
-                      <p className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#010736]/70 mb-0.5">
-                        {card.badge}
-                      </p>
-                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#010736] leading-tight">
-                        {card.title}
-                      </h3>
+                    {/* ── Top Label Above Card (Fixed height guarantees zero card jumping) ── */}
+                    <div className="mb-2 px-3 h-[52px] flex flex-col justify-end">
+                      {/* Mobile / Smaller screens (< lg): hides covered card titles, reveals when scrolling up */}
+                      <motion.div
+                        style={{
+                          opacity: mobileTitleOpacity ?? 1,
+                          visibility: mobileTitleVisibility ?? "visible",
+                        }}
+                        className="lg:hidden"
+                      >
+                        <p className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#010736]/70 mb-0.5">
+                          {card.badge}
+                        </p>
+                        <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#010736] leading-tight">
+                          {card.title}
+                        </h3>
+                      </motion.div>
+
+                      {/* Desktop screens (lg+): all titles remain visible above their respective fanned columns */}
+                      <div className="hidden lg:block">
+                        <p className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#010736]/70 mb-0.5">
+                          {card.badge}
+                        </p>
+                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#010736] leading-tight">
+                          {card.title}
+                        </h3>
+                      </div>
                     </div>
 
                     {/* ── 100% Solid Card Container (Minimal, Uncongested & Impactful) ── */}

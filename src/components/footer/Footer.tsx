@@ -150,7 +150,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#services" className="hover:text-[#14FFEC] transition-colors">
-                  3D Systems & Motion CGI
+                  Content Creation & Media
                 </a>
               </li>
               <li>

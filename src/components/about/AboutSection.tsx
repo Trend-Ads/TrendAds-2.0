@@ -47,8 +47,8 @@ const AGENCY_SERVICES: ServiceItem[] = [
     category: "Creative Identity",
     title: "Branding & Identity",
     metric: "Award-Winning",
-    desc: "Comprehensive brand strategy, iconic visual design, typographic systems, and 3D motion assets.",
-    tags: ["Visual Identity", "3D Motion", "Brand Guidelines", "Design Tokens"],
+    desc: "Comprehensive brand strategy, iconic visual design, typographic systems, and high-impact content creation.",
+    tags: ["Visual Identity", "Content Creation", "Brand Guidelines", "Design Tokens"],
     image: "/services/branding-showcase.jpg",
   },
   {

@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const servicesList = [
   "Web & Mobile Development",
   "Digital Marketing & Ads",
-  "Branding & 3D Motion",
+  "Branding & Content Creation",
   "Software & Digital Growth",
   "Creative Strategy & Production",
   "Others",
