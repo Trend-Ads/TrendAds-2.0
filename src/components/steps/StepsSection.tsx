@@ -18,10 +18,10 @@ const STEPS_DATA: StepItem[] = [
     id: "step-1",
     num: "01",
     title: "DISCOVERY & AUDIT",
-    label: "LOREM IPSUM",
+    label: "DISCOVERY & AUDIT",
     description:
-      "Deep audit of funnel bottlenecks, audience psychology, category whitespace, and competitor ad performance.",
-    metric: "100+ Data Signals Analyzed",
+      "Data-backed funnel audit, audience mapping, and competitor benchmarks.",
+    metric: "100+ Data Signals",
     icon: (
       // Document with text lines icon
       <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#14FFEC]" viewBox="0 0 24 24" fill="currentColor">
@@ -33,10 +33,10 @@ const STEPS_DATA: StepItem[] = [
     id: "step-2",
     num: "02",
     title: "STRATEGY & ARCHITECTURE",
-    label: "LOREM IPSUM",
+    label: "STRATEGY & ROADMAP",
     description:
-      "Architecting omni-channel acquisition funnels, timeline milestones, offer positioning, and media budget plans.",
-    metric: "3.4x Target ROI Blueprint",
+      "Omni-channel funnel blueprints, milestones, and high-ROAS media models.",
+    metric: "3.4x Target ROI",
     icon: (
       // Clock / Stopwatch icon
       <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#14FFEC]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
@@ -49,10 +49,10 @@ const STEPS_DATA: StepItem[] = [
     id: "step-3",
     num: "03",
     title: "CAMPAIGN EXECUTION",
-    label: "LOREM IPSUM",
+    label: "CREATIVE & LAUNCH",
     description:
-      "Deploying high-impact creative assets, programmatic media testing, continuous iteration, and conversion scaling.",
-    metric: "40+ Custom Ad Variants",
+      "Deploying high-converting ad creatives and rapid multi-platform tests.",
+    metric: "40+ Custom Creatives",
     icon: (
       // Rising Bar Chart with Growth Arrow icon
       <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#14FFEC]" viewBox="0 0 24 24" fill="currentColor">
@@ -65,10 +65,10 @@ const STEPS_DATA: StepItem[] = [
     id: "step-4",
     num: "04",
     title: "MARKET DOMINANCE",
-    label: "LOREM IPSUM",
+    label: "SCALE & RETENTION",
     description:
-      "Locking in defensible category moat, customer lifetime value, enterprise scale, and long-term valuation.",
-    metric: "Top 1% Category Authority",
+      "Long-term customer retention, automated funnels, and enterprise growth.",
+    metric: "Top 1% Category Lead",
     icon: (
       // Target / Bullseye with Arrow icon
       <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#14FFEC]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
@@ -222,11 +222,11 @@ export default function StepsSection() {
                     </span>
 
                     {/* Step Title & Copy */}
-                    <div className="flex-1 text-left">
+                    <div className="flex-1 text-left min-w-0 pr-2">
                       <span className="block text-xs xl:text-sm font-black text-white uppercase tracking-wider leading-tight">
                         {step.label}
                       </span>
-                      <p className="text-[11px] xl:text-xs text-slate-300 font-medium leading-snug line-clamp-2 mt-0.5 max-w-[340px]">
+                      <p className="text-[11px] xl:text-xs text-slate-300 font-medium leading-snug mt-0.5">
                         {step.description}
                       </p>
                     </div>

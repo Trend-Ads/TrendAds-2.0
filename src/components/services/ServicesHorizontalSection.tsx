@@ -8,11 +8,10 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 
-interface Subsection {
-  icon: string;
+interface ServiceItem {
+  iconId: string;
   title: string;
-  subtitle: string;
-  bullets: string[];
+  tag: string;
 }
 
 interface ServiceCard {
@@ -20,151 +19,175 @@ interface ServiceCard {
   num: number;
   badge: string;
   title: string;
+  stat: string;
+  headline: string;
   categoryEn: string;
   bgColor: string;
   numColor: string;
-  sections: Subsection[];
+  services: ServiceItem[];
+  tags: string[];
 }
 
 const SERVICE_CARDS: ServiceCard[] = [
   {
-    id: "brand",
+    id: "web-mobile",
     num: 1,
-    badge: "01 · CORE STRATEGY",
-    title: "BRAND IDENTITY",
-    categoryEn: "STRATEGY & 3D SYSTEMS",
-    bgColor: "bg-[#234f21]",
-    numColor: "text-[#438339]",
-    sections: [
+    badge: "01 · ENGINEERING",
+    title: "WEB & MOBILE",
+    stat: "99+ LIGHTHOUSE SPEED",
+    headline: "High-performance web and mobile products built to scale.",
+    categoryEn: "WEB & MOBILE",
+    bgColor: "bg-[#010736]",
+    numColor: "text-[#101e6b]",
+    services: [
       {
-        icon: "💻",
-        title: "Brand Positioning",
-        subtitle: "Market Archetype & Identity",
-        bullets: [
-          "Define global visual DNA and high-impact differentiation barriers.",
-          "Full-funnel technical edge: from strategy audit to 3D motion guidelines.",
-          "Complete deliverables: cross-channel design tokens and VI standards.",
-        ],
+        iconId: "web",
+        title: "Web Platforms",
+        tag: "Next.js & Shopify",
       },
       {
-        icon: "✨",
-        title: "3D Differentiation",
-        subtitle: "High-Impact Visual Systems",
-        bullets: [
-          "Eliminate visual fatigue: craft bespoke luxury digital design systems.",
-          "Immersive presentation: photorealistic 3D CGI rendering & packaging.",
-          "Proven impact: scaled 40+ international brands to category dominance.",
-        ],
+        iconId: "mobile",
+        title: "Mobile Apps",
+        tag: "iOS & Android",
       },
     ],
+    tags: ["Next.js", "React Native", "WebGL"],
   },
   {
-    id: "ads",
+    id: "marketing",
     num: 2,
     badge: "02 · ACQUISITION",
-    title: "PERFORMANCE ADS",
-    categoryEn: "ALGORITHMIC ROAS SCALING",
-    bgColor: "bg-[#2d5f27]",
-    numColor: "text-[#509644]",
-    sections: [
+    title: "GROWTH & ADS",
+    stat: "4.8X VERIFIED ROAS",
+    headline: "High-yield paid media and viral search that drive revenue.",
+    categoryEn: "PAID MEDIA & SEO",
+    bgColor: "bg-[#040e48]",
+    numColor: "text-[#182d8c]",
+    services: [
       {
-        icon: "🎯",
-        title: "Omni-Channel Scale",
-        subtitle: "Algorithmic Media Buying",
-        bullets: [
-          "Cross-channel scale across Meta (IG/FB), Google PMax & TikTok Ads.",
-          "Algorithmic bidding: dynamic real-time pacing & budget guardrails.",
-          "Server-side Conversions API (CAPI) and multi-touch attribution setup.",
-        ],
+        iconId: "ads",
+        title: "Paid Media",
+        tag: "Meta & Google Ads",
       },
       {
-        icon: "📈",
-        title: "Creative Scaling Engine",
-        subtitle: "High-Velocity Testing Loops",
-        bullets: [
-          "High-frequency testing: 20+ fresh hook angles and creatives weekly.",
-          "Profitable scale: protect positive cash flow while scaling ad volume.",
-          "Proven impact: $50M+ managed ad spend with 4.8x average ROAS.",
-        ],
+        iconId: "seo",
+        title: "Viral Search",
+        tag: "SEO & Retention",
       },
     ],
+    tags: ["Meta Ads", "Google PMax", "Viral SEO"],
   },
   {
-    id: "content",
+    id: "brand",
     num: 3,
-    badge: "03 · VIRAL PRODUCTION",
-    title: "COMMERCIAL FILMS",
-    categoryEn: "CINEMATIC CONTENT & UGC",
-    bgColor: "bg-[#3a7632]",
-    numColor: "text-[#63ad4d]",
-    sections: [
+    badge: "03 · CREATIVE",
+    title: "BRAND & 3D",
+    stat: "AWARD-WINNING DESIGN",
+    headline: "Iconic visual identities and photorealistic 3D motion.",
+    categoryEn: "BRANDING & 3D",
+    bgColor: "bg-[#091759]",
+    numColor: "text-[#223fa8]",
+    services: [
       {
-        icon: "🎥",
-        title: "Studio Production",
-        subtitle: "High-Retention Commercials",
-        bullets: [
-          "Hollywood studio standard: visionary scripting, casting & 4K cinema grade.",
-          "High-retention editing tailored to algorithmic social hooks.",
-          "Dynamic 3D VFX motion graphics that maximize viewer dwell time.",
-        ],
+        iconId: "brand",
+        title: "Brand Systems",
+        tag: "Identity & Visual DNA",
       },
       {
-        icon: "👥",
-        title: "Creator Network",
-        subtitle: "Authentic UGC Amplification",
-        bullets: [
-          "Global creator pool: 1,200+ vetted, high-converting UGC ambassadors.",
-          "Native brand trust: authentic storytelling amplified via Spark Ads.",
-          "Global reach: generated 250M+ organic and commercial video views.",
-        ],
+        iconId: "3d",
+        title: "3D Motion",
+        tag: "CGI & Product Reels",
       },
     ],
+    tags: ["Design Systems", "3D Motion", "CGI"],
   },
   {
-    id: "digital",
+    id: "software-growth",
     num: 4,
-    badge: "04 · DIGITAL SYSTEMS",
-    title: "DIGITAL PLATFORMS",
-    categoryEn: "NEXT-GEN WEB & FUNNELS",
-    bgColor: "bg-[#4f933f]",
-    numColor: "text-[#79c759]",
-    sections: [
+    badge: "04 · SYSTEMS",
+    title: "SOFTWARE & SCALE",
+    stat: "+42% CONVERSION UPLIFT",
+    headline: "Enterprise cloud software and rapid conversion rate growth.",
+    categoryEn: "CLOUD & CRO",
+    bgColor: "bg-[#0f226b]",
+    numColor: "text-[#3055cb]",
+    services: [
       {
-        icon: "📢",
-        title: "Web Architecture",
-        subtitle: "Next-Gen Headless Platforms",
-        bullets: [
-          "Modern tech stack: Next.js App Router & React 19 sub-second speed.",
-          "Headless commerce: custom Shopify storefronts with global edge CDN.",
-        ],
+        iconId: "cloud",
+        title: "Cloud Software",
+        tag: "APIs & Custom SaaS",
       },
       {
-        icon: "⚡",
-        title: "Funnel Optimization",
-        subtitle: "Conversion Rate & CRO",
-        bullets: [
-          "Checkout flow optimization: multivariate testing & friction removal.",
-          "Lifecycle retention: automated Klaviyo email & SMS flows boosting LTV.",
-        ],
-      },
-      {
-        icon: "🚀",
-        title: "Growth Guarantee",
-        subtitle: "Enterprise Speed & Reliability",
-        bullets: [
-          "Performance guarantee: 99+ Google Lighthouse score & +42% CVR uplift.",
-        ],
+        iconId: "growth",
+        title: "Digital Growth",
+        tag: "Full-Funnel CRO",
       },
     ],
+    tags: ["Custom SaaS", "Cloud APIs", "CRO Labs"],
   },
 ];
+
+// Quality SVG Icons
+function SubsectionIcon({ id, className = "w-4 h-4" }: { id: string; className?: string }) {
+  switch (id) {
+    case "web":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+      );
+    case "mobile":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      );
+    case "ads":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      );
+    case "seo":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      );
+    case "brand":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+        </svg>
+      );
+    case "3d":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+      );
+    case "cloud":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      );
+    case "growth":
+    default:
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      );
+  }
+}
 
 export default function ServicesHorizontalSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeStep, setActiveStep] = useState(1);
   const [progressVal, setProgressVal] = useState(0);
 
-  // Framer Motion native scroll progress across the container (synced with Lenis)
+  // Framer Motion scroll progress across the container
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -185,33 +208,23 @@ export default function ServicesHorizontalSection() {
   });
 
   // ── DYNAMIC ENTRANCES ──
-  // Card 1 is ALREADY in picture halfway (35vw) as soon as you reach the section!
-  // It glides from 35vw into 0vw between 0.00 and 0.16.
-  // Card 2 glides in from 100vw to 0vw and overlays Card 1 between 0.20 and 0.42.
-  // Card 3 glides in from 100vw to 0vw and overlays Card 2 between 0.45 and 0.67.
-  // Card 4 glides in from 100vw to 0vw and overlays Card 3 between 0.70 and 0.92.
-
-  // Card 1: Starts in picture halfway on reach, settles into base
   const card1X = useTransform(scrollYProgress, [0.00, 0.16], ["35vw", "0vw"]);
   const card1Rotate = useTransform(scrollYProgress, [0.00, 0.16], [2.5, 0]);
   const card1Scale = useTransform(scrollYProgress, [0.00, 0.16], [0.96, 1]);
 
-  // Card 2: Enters and overlays on Card 1
   const card2X = useTransform(scrollYProgress, [0.20, 0.42], ["100vw", "0vw"]);
   const card2Rotate = useTransform(scrollYProgress, [0.20, 0.42], [3.5, 0]);
   const card2Scale = useTransform(scrollYProgress, [0.20, 0.42], [0.94, 1]);
 
-  // Card 3: Enters and overlays on Card 2
   const card3X = useTransform(scrollYProgress, [0.45, 0.67], ["100vw", "0vw"]);
   const card3Rotate = useTransform(scrollYProgress, [0.45, 0.67], [3.5, 0]);
   const card3Scale = useTransform(scrollYProgress, [0.45, 0.67], [0.94, 1]);
 
-  // Card 4: Enters and overlays on Card 3
   const card4X = useTransform(scrollYProgress, [0.70, 0.92], ["100vw", "0vw"]);
   const card4Rotate = useTransform(scrollYProgress, [0.70, 0.92], [3.5, 0]);
   const card4Scale = useTransform(scrollYProgress, [0.70, 0.92], [0.94, 1]);
 
-  // Jump to specific card by smoothly scrolling the page vertically
+  // Smooth jump to card
   const jumpToCard = (num: number) => {
     if (!containerRef.current) return;
     const container = containerRef.current;
@@ -233,18 +246,15 @@ export default function ServicesHorizontalSection() {
     <section
       ref={containerRef}
       id="services"
-      // Pinned track height for smooth, rhythmic card overlay progression
       className="relative h-[380vh] bg-[#faf8f5] text-slate-900 border-t border-slate-200/80"
     >
-      {/* Sticky viewport pinned while user scrolls vertically */}
+      {/* Sticky pinned viewport */}
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between py-6 md:py-8 select-none">
-        
-        {/* Subtle ambient background dot pattern */}
+        {/* Subtle background dot pattern using #010736 */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-[0.35]"
+          className="absolute inset-0 pointer-events-none opacity-[0.3]"
           style={{
-            backgroundImage:
-              "radial-gradient(#234f21 0.75px, transparent 0.75px)",
+            backgroundImage: "radial-gradient(#010736 0.75px, transparent 0.75px)",
             backgroundSize: "28px 28px",
           }}
           aria-hidden="true"
@@ -253,11 +263,11 @@ export default function ServicesHorizontalSection() {
         {/* ── TOP HEADER / CONTROLS ── */}
         <div className="relative z-50 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <span className="px-3.5 py-1 rounded-full bg-[#234f21]/10 border border-[#234f21]/20 text-[#234f21] text-xs font-bold tracking-wider uppercase flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#234f21] animate-pulse" />
+            <span className="px-3.5 py-1 rounded-full bg-[#010736]/10 border border-[#010736]/20 text-[#010736] text-xs font-bold tracking-wider uppercase flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#010736] animate-pulse" />
               CAPABILITIES & SERVICES
             </span>
-            <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#142e12]">
+            <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#010736]">
               WHAT WE PROVIDE
             </h2>
           </div>
@@ -273,13 +283,19 @@ export default function ServicesHorizontalSection() {
                   onClick={() => jumpToCard(c.num)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold transition-all duration-300 border flex items-center gap-1.5 cursor-pointer ${
                     isCurrent
-                      ? "bg-[#234f21] text-white border-[#234f21] shadow-[0_4px_16px_rgba(35,79,33,0.35)] scale-105"
-                      : "bg-white text-slate-700 border-slate-300 shadow-sm hover:border-[#234f21]/50 hover:text-[#234f21]"
+                      ? "bg-[#010736] text-white border-[#010736] shadow-[0_4px_16px_rgba(1,7,54,0.35)] scale-105"
+                      : "bg-white text-slate-700 border-slate-300 shadow-sm hover:border-[#010736]/50 hover:text-[#010736]"
                   }`}
                 >
                   <span>{c.num}.</span>
                   <span className="hidden sm:inline">
-                    {c.title.split(" ")[0]}
+                    {c.num === 1
+                      ? "Web & Mobile"
+                      : c.num === 2
+                      ? "Growth & Ads"
+                      : c.num === 3
+                      ? "Brand & 3D"
+                      : "Software"}
                   </span>
                 </button>
               );
@@ -288,11 +304,9 @@ export default function ServicesHorizontalSection() {
         </div>
 
         {/* ── MAIN HORIZONTAL OVERLAY STAGE ── */}
-        {/* On mobile: 95% overlay (16px offset), active card has full width and 100% visibility */}
-        {/* On desktop: fanned 260px offset with full visibility */}
         <div className="relative z-30 flex-1 flex items-center justify-center w-full max-w-[1400px] mx-auto px-3 sm:px-6 overflow-hidden">
           {/* Centered stage holding the overlapping cards */}
-          <div className="relative w-full max-w-[340px] sm:max-w-[620px] md:max-w-[880px] lg:max-w-[1140px] h-[520px] sm:h-[550px] lg:h-[580px] max-h-[76vh] flex items-center mx-auto">
+          <div className="relative w-full max-w-[340px] sm:max-w-[620px] md:max-w-[880px] lg:max-w-[1140px] h-[510px] sm:h-[540px] lg:h-[560px] max-h-[76vh] flex items-center mx-auto">
             {SERVICE_CARDS.map((card, idx) => {
               const motionX =
                 idx === 0
@@ -321,9 +335,6 @@ export default function ServicesHorizontalSection() {
                   ? card3Scale
                   : card4Scale;
 
-              // Responsive positioning:
-              // Mobile: offset by only 16px per card (95% overlap, active card gets full width)
-              // Tablet/Desktop: offset by 180px -> 260px per card
               const leftOffsetClasses =
                 idx === 0
                   ? "left-0"
@@ -345,32 +356,31 @@ export default function ServicesHorizontalSection() {
                   }}
                 >
                   <div className="flex flex-col h-full w-[84vw] max-w-[325px] sm:w-[350px] lg:w-[380px] shrink-0">
-                    
-                    {/* ── Top Label Above Card (100% English) ── */}
+                    {/* ── Top Label Above Card ── */}
                     <div className="mb-2 px-3">
-                      <p className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#265321] mb-0.5">
+                      <p className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#010736]/70 mb-0.5">
                         {card.badge}
                       </p>
-                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#142e12] leading-tight">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#010736] leading-tight">
                         {card.title}
                       </h3>
                     </div>
 
-                    {/* ── 100% Solid Card Container with Deep Background Shadows (No Transparency) ── */}
+                    {/* ── 100% Solid Card Container (Minimal, Uncongested & Impactful) ── */}
                     <div
-                      className={`relative flex-1 rounded-[28px] ${card.bgColor} p-4 sm:p-5 flex flex-col justify-between text-white transition-all duration-300 ${
+                      className={`relative flex-1 rounded-[28px] ${card.bgColor} p-6 sm:p-7 flex flex-col justify-between text-white transition-all duration-300 ${
                         idx > 0
-                          ? "shadow-[-35px_0_55px_rgba(0,0,0,0.55),_-15px_0_20px_rgba(0,0,0,0.35)] border-l-2 border-white/40"
-                          : "shadow-[0_22px_50px_rgba(0,0,0,0.35),_0_8px_18px_rgba(0,0,0,0.2)] border border-white/25"
+                          ? "shadow-[-35px_0_55px_rgba(1,7,54,0.65),_-15px_0_20px_rgba(1,7,54,0.45)] border-l-2 border-white/40"
+                          : "shadow-[0_22px_50px_rgba(1,7,54,0.4),_0_8px_18px_rgba(1,7,54,0.25)] border border-white/25"
                       }`}
                     >
-                      {/* ── Giant Number Connected on Left Side (High Visibility Outlined & Shadowed) ── */}
+                      {/* ── Giant Number Connected on Left Side ── */}
                       <div
                         className="absolute -left-5 sm:-left-7 top-1/2 -translate-y-1/2 pointer-events-none select-none z-30"
                         aria-hidden="true"
                       >
                         <span
-                          className={`text-8xl sm:text-9xl lg:text-[145px] font-black leading-none tracking-tighter ${card.numColor} drop-shadow-[0_16px_30px_rgba(0,0,0,0.7)]`}
+                          className={`text-8xl sm:text-9xl lg:text-[145px] font-black leading-none tracking-tighter ${card.numColor} drop-shadow-[0_16px_30px_rgba(1,7,54,0.8)]`}
                           style={{
                             WebkitTextStroke: "3px rgba(255, 255, 255, 0.9)",
                           }}
@@ -379,58 +389,65 @@ export default function ServicesHorizontalSection() {
                         </span>
                       </div>
 
-                      {/* ── Subsections with Solid White Circular Badges & Dividers (Full Visibility) ── */}
-                      <div className="relative z-10 pl-5 sm:pl-6 space-y-3 flex-1 flex flex-col justify-center">
-                        {card.sections.map((sec, sIdx) => (
-                          <div key={sIdx} className="space-y-1.5">
-                            {/* Header row with SOLID WHITE circular badge */}
-                            <div className="flex items-center gap-2">
-                              <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white text-slate-900 shadow-md flex items-center justify-center text-xs shrink-0 font-bold">
-                                {sec.icon}
+                      {/* ── Card Content: Clean, Punchy & Airy (Zero Congestion) ── */}
+                      <div className="relative z-10 pl-5 sm:pl-7 space-y-6 flex-1 flex flex-col justify-center">
+                        {/* Stat Pill */}
+                        <div className="inline-flex items-center gap-1.5 self-start bg-white/10 backdrop-blur-xs border border-white/20 px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-wider text-white">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-300 animate-pulse" />
+                          {card.stat}
+                        </div>
+
+                        {/* Bold Punchy Statement */}
+                        <h4 className="text-base sm:text-lg text-white font-black leading-snug tracking-tight">
+                          {card.headline}
+                        </h4>
+
+                        {/* 2 Core Capabilities (2 Lines, Fully Visible On Any Screen) */}
+                        <div className="space-y-2.5">
+                          {card.services.map((serv, sIdx) => (
+                            <div
+                              key={sIdx}
+                              className="flex items-start gap-3 bg-white/[0.08] hover:bg-white/[0.12] border border-white/10 rounded-xl px-3.5 py-2.5 transition-colors"
+                            >
+                              <span className="w-7 h-7 rounded-lg bg-white/15 text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <SubsectionIcon id={serv.iconId} className="w-3.5 h-3.5" />
                               </span>
-                              <div className="min-w-0">
-                                <h4 className="text-xs sm:text-[13px] font-black uppercase text-white tracking-wide truncate drop-shadow-sm">
-                                  {sec.title}
-                                </h4>
-                                <p className="text-[9.5px] sm:text-[10px] text-white/90 font-mono leading-none truncate font-medium">
-                                  {sec.subtitle}
-                                </p>
+                              <div className="flex-1 min-w-0">
+                                <span className="block text-xs sm:text-[13px] font-bold text-white tracking-wide leading-snug">
+                                  {serv.title}
+                                </span>
+                                <span className="block text-[10.5px] font-mono text-cyan-200/90 font-medium leading-tight mt-0.5">
+                                  {serv.tag}
+                                </span>
                               </div>
                             </div>
+                          ))}
+                        </div>
 
-                            {/* Crisp Solid White Divider Line with Node */}
-                            <div className="flex items-center gap-2 py-0.5">
-                              <div className="w-1.5 h-1.5 rounded-full bg-white shrink-0 shadow-sm" />
-                              <div className="flex-1 h-[1.5px] bg-gradient-to-r from-white via-white/90 to-transparent" />
-                            </div>
-
-                            {/* Bullet items with solid white dot & 100% solid white typography */}
-                            <ul className="space-y-1">
-                              {sec.bullets.map((b, bIdx) => (
-                                <li
-                                  key={bIdx}
-                                  className="flex items-start gap-1.5 text-[10.5px] sm:text-[11.5px] text-white leading-snug font-medium"
-                                >
-                                  <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0 mt-1.5 shadow-sm" />
-                                  <span>{b}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
+                        {/* Clean Minimalist Tag Pills */}
+                        <div className="flex flex-wrap gap-1.5 pt-0.5">
+                          {card.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-[9.5px] bg-white/10 text-white/85 border border-white/15 px-2.5 py-0.5 rounded-full font-mono font-medium"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
 
                       {/* ── Card Footer with CTA ── */}
-                      <div className="mt-2 pt-2.5 border-t border-white/25 flex items-center justify-between pl-5 sm:pl-6">
-                        <span className="text-[9.5px] font-mono uppercase text-white tracking-wider font-bold">
-                          TREND ADS · {card.categoryEn}
+                      <div className="pt-3 border-t border-white/15 flex items-center justify-between pl-5 sm:pl-7">
+                        <span className="text-[10px] font-mono uppercase text-white/70 tracking-wider font-semibold">
+                          {card.categoryEn}
                         </span>
                         <a
                           href="#contact"
-                          className="text-[10.5px] font-bold text-white hover:text-white/90 flex items-center gap-1 transition-opacity underline underline-offset-2"
+                          className="text-xs font-bold text-white hover:text-cyan-300 flex items-center gap-1 transition-colors cursor-pointer group"
                         >
                           <span>Deploy</span>
-                          <span>→</span>
+                          <span className="group-hover:translate-x-0.5 transition-transform">→</span>
                         </a>
                       </div>
                     </div>
@@ -444,45 +461,26 @@ export default function ServicesHorizontalSection() {
         {/* ── BOTTOM CONTROLS & PROGRESS BAR ── */}
         <div className="relative z-50 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex flex-col sm:flex-row items-center justify-between gap-3 pt-1">
           <div className="flex items-center gap-3 text-xs font-mono text-slate-700">
-            <span className="text-[#142e12] font-black">PILLAR {activeStep} OF 4</span>
-            <span>//</span>
-            <span
-              className={`font-semibold ${
-                progressVal >= 0.94
-                  ? "text-[#234f21] font-bold"
-                  : "text-[#265321] animate-pulse"
-              }`}
-            >
-              {progressVal >= 0.94
-                ? "ALL 4 PILLARS STACKED — CONTINUE SCROLLING ↓"
-                : "SCROLL TO OVERLAY NEXT PILLAR ↔"}
+            <span className="text-[#010736] font-black">PILLAR {activeStep} OF 4</span>
+            <span>{"//"}</span>
+            <span className="font-semibold text-[#010736]">
+              {SERVICE_CARDS[activeStep - 1]?.title}
             </span>
           </div>
 
-          {/* Clean Progress Bar matching green theme */}
-          <div className="w-full sm:w-80 h-2 bg-[#234f21]/15 rounded-full overflow-hidden relative border border-[#234f21]/20">
-            <motion.div
-              className="h-full bg-gradient-to-r from-[#234f21] via-[#3a7632] to-[#4f933f] origin-left"
-              style={{ scaleX: scrollYProgress }}
-            />
-          </div>
-
-          {/* Number indicator pills */}
-          <div className="flex items-center gap-1.5">
-            {[1, 2, 3, 4].map((step) => (
-              <button
-                key={step}
-                type="button"
-                onClick={() => jumpToCard(step)}
-                className={`w-7 h-7 rounded-lg text-xs font-mono font-bold flex items-center justify-center transition-all cursor-pointer ${
-                  activeStep >= step
-                    ? "bg-[#234f21] text-white shadow-[0_2px_8px_rgba(35,79,33,0.3)]"
-                    : "bg-white text-slate-700 shadow-sm hover:bg-slate-100"
-                }`}
-              >
-                {step}
-              </button>
-            ))}
+          {/* Progress track */}
+          <div className="flex items-center gap-3 w-full sm:w-64">
+            <div className="flex-1 h-2 bg-slate-200/90 rounded-full overflow-hidden p-0.5 border border-slate-300">
+              <div
+                className="h-full bg-gradient-to-r from-[#010736] via-[#091759] to-[#2373F4] rounded-full transition-all duration-150"
+                style={{
+                  width: `${Math.min(100, Math.max(8, progressVal * 100))}%`,
+                }}
+              />
+            </div>
+            <span className="text-xs font-mono font-bold text-slate-500 w-10 text-right">
+              {Math.round(progressVal * 100)}%
+            </span>
           </div>
         </div>
       </div>
