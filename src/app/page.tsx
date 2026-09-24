@@ -1,3 +1,4 @@
+import WebsiteLoadingScreen from "@/components/loader/WebsiteLoadingScreen";
 import Navbar from "@/components/navigation/Navbar";
 import HeroSection from "@/components/hero/HeroSection";
 import AboutSection from "@/components/about/AboutSection";
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
+      <WebsiteLoadingScreen />
       <Navbar />
       <HeroSection />
       <AboutSection />
