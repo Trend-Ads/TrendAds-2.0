@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface BoardMember {
@@ -202,6 +203,8 @@ const BOARD_MEMBERS: BoardMember[] = [
   },
 ];
 
+const emptySubscribe = () => () => {};
+
 export default function BoardMembersSection() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -226,9 +229,53 @@ export default function BoardMembersSection() {
     setHoveredId(null);
   }, []);
 
+  const isClient = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
+
+  // Stop background scroll and pause Lenis when modal is open
+  useEffect(() => {
+    if (!selectedId) return;
+
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    // Pause Lenis smooth scroll if active
+    const win = window as unknown as { lenis?: { stop: () => void; start: () => void } };
+    win.lenis?.stop();
+
+    // Prevent wheel & touch on background outside the modal card
+    const handleWheelOrTouch = (e: TouchEvent | WheelEvent) => {
+      const modalEl = document.getElementById("board-member-modal-card");
+      if (modalEl && modalEl.contains(e.target as Node)) {
+        return;
+      }
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener("wheel", handleWheelOrTouch, { passive: false });
+    window.addEventListener("touchmove", handleWheelOrTouch, { passive: false });
+
+    return () => {
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+      win.lenis?.start();
+      window.removeEventListener("wheel", handleWheelOrTouch);
+      window.removeEventListener("touchmove", handleWheelOrTouch);
+    };
+  }, [selectedId]);
+
   // Dismiss selection on Escape or clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
+      if (selectedId) return;
       if (
         containerRef.current &&
         !containerRef.current.contains(e.target as Node)
@@ -250,7 +297,7 @@ export default function BoardMembersSection() {
       window.removeEventListener("click", handleClickOutside);
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [selectedId]);
 
   const handleMemberSelect = useCallback((id: string) => {
     setSelectedId((prev) => (prev === id ? null : id));
@@ -264,18 +311,18 @@ export default function BoardMembersSection() {
     >
       {/* ── Cinematic Studio Ambient Atmosphere ── */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[650px] pointer-events-none opacity-25 blur-[160px] rounded-full"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[650px] pointer-events-none opacity-30 blur-[160px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, #ff5419 0%, #c0200a 45%, transparent 75%)",
+            "radial-gradient(circle, #1B2CC1 0%, #0c1566 45%, transparent 75%)",
         }}
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-16 left-1/3 w-[550px] h-[400px] pointer-events-none opacity-15 blur-[140px] rounded-full"
+        className="absolute bottom-16 left-1/3 w-[550px] h-[400px] pointer-events-none opacity-20 blur-[140px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, #f97316 0%, #ff5419 60%, transparent 80%)",
+            "radial-gradient(circle, #3B82F6 0%, #1B2CC1 60%, transparent 80%)",
         }}
         aria-hidden="true"
       />
@@ -335,14 +382,14 @@ export default function BoardMembersSection() {
                   >
                     <span
                       className={`text-[10px] font-mono tracking-widest font-bold mb-0.5 transition-colors ${
-                        isSelected ? "text-[#ff7a45]" : "text-slate-400 group-hover:text-[#ff7a45]"
+                        isSelected ? "text-[#5B7BFF]" : "text-slate-400 group-hover:text-[#5B7BFF]"
                       }`}
                     >
                       {member.num}
                     </span>
                     <h3
                       className={`text-sm lg:text-base font-black uppercase tracking-tight leading-tight transition-colors ${
-                        isSelected ? "text-[#ff7a45]" : "text-white group-hover:text-[#ff7a45]"
+                        isSelected ? "text-[#5B7BFF]" : "text-white group-hover:text-[#5B7BFF]"
                       }`}
                     >
                       {member.name}
@@ -417,14 +464,14 @@ export default function BoardMembersSection() {
                   >
                     <span
                       className={`text-[10px] font-mono tracking-widest font-bold mb-0.5 transition-colors ${
-                        isSelected ? "text-[#ff7a45]" : "text-slate-400 group-hover:text-[#ff7a45]"
+                        isSelected ? "text-[#5B7BFF]" : "text-slate-400 group-hover:text-[#5B7BFF]"
                       }`}
                     >
                       {member.num}
                     </span>
                     <h3
                       className={`text-sm lg:text-base font-black uppercase tracking-tight leading-tight transition-colors ${
-                        isSelected ? "text-[#ff7a45]" : "text-white group-hover:text-[#ff7a45]"
+                        isSelected ? "text-[#5B7BFF]" : "text-white group-hover:text-[#5B7BFF]"
                       }`}
                     >
                       {member.name}
@@ -485,10 +532,10 @@ export default function BoardMembersSection() {
           >
             {/* Backlight halo behind the leadership pyramid */}
             <div
-              className="absolute top-[32%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] pointer-events-none -z-10 opacity-35 blur-[90px] rounded-full"
+              className="absolute top-[32%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] pointer-events-none -z-10 opacity-40 blur-[90px] rounded-full"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(255,84,25,0.4) 0%, rgba(192,32,10,0.18) 50%, transparent 75%)",
+                  "radial-gradient(circle, rgba(27,44,193,0.5) 0%, rgba(12,21,102,0.2) 50%, transparent 75%)",
               }}
             />
 
@@ -531,7 +578,7 @@ export default function BoardMembersSection() {
                 transition={{ duration: 0.25 }}
                 className="absolute inset-0 pointer-events-none z-15"
                 style={{
-                  background: `radial-gradient(circle at ${activeMember.xPct}% ${activeMember.yPct}%, rgba(255,84,25,0.38) 0%, rgba(255,84,25,0.12) 28%, transparent 55%)`,
+                  background: `radial-gradient(circle at ${activeMember.xPct}% ${activeMember.yPct}%, rgba(27,44,193,0.42) 0%, rgba(27,44,193,0.15) 28%, transparent 55%)`,
                 }}
               />
             )}
@@ -564,7 +611,7 @@ export default function BoardMembersSection() {
                     className="w-full h-full rounded-full cursor-pointer focus:outline-none touch-manipulation relative transition-all duration-300"
                     style={{
                       background: isSelected
-                        ? "radial-gradient(circle, rgba(255,84,25,0.2) 0%, transparent 70%)"
+                        ? "radial-gradient(circle, rgba(27,44,193,0.3) 0%, transparent 70%)"
                         : "transparent",
                     }}
                   >
@@ -576,7 +623,7 @@ export default function BoardMembersSection() {
                           animate={{ scale: 1, opacity: 1 }}
                           exit={{ scale: 0.8, opacity: 0 }}
                           transition={{ duration: 0.25 }}
-                          className="absolute inset-0 rounded-full border border-[#ff5419]/70 shadow-[0_0_25px_rgba(255,84,25,0.5)] pointer-events-none"
+                          className="absolute inset-0 rounded-full border border-[#1B2CC1]/80 shadow-[0_0_25px_rgba(27,44,193,0.7)] pointer-events-none"
                         />
                       )}
                     </AnimatePresence>
@@ -590,7 +637,7 @@ export default function BoardMembersSection() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 5, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute -top-7 left-1/2 -translate-x-1/2 z-40 px-2.5 py-0.5 rounded-full bg-[#ff5419] text-white text-[9.5px] font-mono font-bold tracking-wider uppercase shadow-[0_0_18px_rgba(255,84,25,0.7)] whitespace-nowrap pointer-events-none"
+                        className="absolute -top-7 left-1/2 -translate-x-1/2 z-40 px-2.5 py-0.5 rounded-full bg-[#1B2CC1] text-white text-[9.5px] font-mono font-bold tracking-wider uppercase shadow-[0_0_18px_rgba(27,44,193,0.85)] border border-[#ABD2FA]/40 whitespace-nowrap pointer-events-none"
                       >
                         {member.num} · {member.name}
                       </motion.div>
@@ -603,126 +650,134 @@ export default function BoardMembersSection() {
           </div>
         </div>
 
-        {/* ── EXECUTIVE MEMBER PROFILE MODAL (Mobile & All Screens) ── */}
-        <AnimatePresence>
-          {selectedId && (() => {
-            const selectedMember = BOARD_MEMBERS.find((m) => m.id === selectedId);
-            if (!selectedMember) return null;
+        {/* ── EXECUTIVE MEMBER PROFILE MODAL (Portaled to body, above Navbar with backdrop blur) ── */}
+        {isClient &&
+          createPortal(
+            <AnimatePresence>
+              {selectedId && (() => {
+                const selectedMember = BOARD_MEMBERS.find((m) => m.id === selectedId);
+                if (!selectedMember) return null;
 
-            return (
-              <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-                {/* Backdrop Blur */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  onClick={() => setSelectedId(null)}
-                  className="absolute inset-0 bg-black/85 backdrop-blur-md cursor-pointer"
-                />
-
-                {/* Modal Dialog Card */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9, y: 25 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.92, y: 15 }}
-                  transition={{ type: "spring", damping: 26, stiffness: 320 }}
-                  className="relative w-full max-w-md bg-[#0d0f15] border border-[#ff5419]/35 rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.95)] z-10 flex flex-col text-white"
-                >
-                  {/* Header Bar */}
-                  <div className="flex items-center justify-between px-5 pt-4 pb-1 z-20">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ff5419]/15 border border-[#ff5419]/30 text-[#ff7a45] text-[10px] font-mono font-bold tracking-wider uppercase">
-                      <span>LEADERSHIP · {selectedMember.num}</span>
-                    </div>
-                    <button
-                      type="button"
+                return (
+                  <div
+                    data-lenis-prevent="true"
+                    className="fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-6 select-none"
+                  >
+                    {/* Backdrop Blur that covers everything including Navbar */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                       onClick={() => setSelectedId(null)}
-                      className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-slate-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer text-sm"
-                      aria-label="Close modal"
+                      className="fixed inset-0 bg-black/85 backdrop-blur-xl cursor-pointer"
+                    />
+
+                    {/* Modal Dialog Card */}
+                    <motion.div
+                      id="board-member-modal-card"
+                      initial={{ opacity: 0, scale: 0.9, y: 25 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.92, y: 15 }}
+                      transition={{ type: "spring", damping: 26, stiffness: 320 }}
+                      className="relative w-full max-w-md max-h-[90vh] overflow-y-auto bg-[#090c19] border border-[#1B2CC1]/40 rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.95)] z-10 flex flex-col text-white"
                     >
-                      ✕
-                    </button>
-                  </div>
-
-                  {/* Individual Member Cutout Portrait */}
-                  <div className="relative w-full h-64 sm:h-72 flex items-end justify-center overflow-hidden">
-                    <div
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 pointer-events-none opacity-30 blur-3xl rounded-full"
-                      style={{
-                        background: "radial-gradient(circle, #ff5419 0%, transparent 70%)",
-                      }}
-                    />
-                    <Image
-                      src={selectedMember.image}
-                      alt={selectedMember.name}
-                      width={340}
-                      height={400}
-                      priority
-                      className="relative z-10 max-h-full w-auto object-contain object-bottom filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.85)]"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#0d0f15] to-transparent z-10" />
-                  </div>
-
-                  {/* Member Details */}
-                  <div className="p-5 sm:p-6 pt-2 text-left">
-                    <div className="flex items-baseline justify-between mb-0.5">
-                      <h3 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight">
-                        {selectedMember.name}
-                      </h3>
-                      <span className="text-[11px] font-mono font-semibold text-[#ff7a45]">
-                        {selectedMember.department}
-                      </span>
-                    </div>
-
-                    <p className="text-xs sm:text-sm font-semibold text-[#ff5419] mb-2.5">
-                      {selectedMember.role}
-                    </p>
-
-                    <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal mb-4">
-                      {selectedMember.description}
-                    </p>
-
-                    {/* Social Media Links */}
-                    {(selectedMember.linkedIn || selectedMember.instagram) && (
-                      <div className="flex items-center gap-3 pt-3 border-t border-white/10">
-                        <span className="text-xs font-semibold text-slate-400">Connect:</span>
-                        <div className="flex items-center gap-2">
-                          {selectedMember.linkedIn && (
-                            <a
-                              href={selectedMember.linkedIn}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-[#0077b5] text-white text-xs font-semibold transition-all hover:scale-105 shadow-xs"
-                              aria-label={`${selectedMember.name} on LinkedIn`}
-                            >
-                              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                              </svg>
-                              <span>LinkedIn</span>
-                            </a>
-                          )}
-                          {selectedMember.instagram && (
-                            <a
-                              href={selectedMember.instagram}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] text-white text-xs font-semibold transition-all hover:scale-105 shadow-xs"
-                              aria-label={`${selectedMember.name} on Instagram`}
-                            >
-                              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                              </svg>
-                              <span>Instagram</span>
-                            </a>
-                          )}
+                      {/* Header Bar */}
+                      <div className="flex items-center justify-between px-5 pt-4 pb-1 z-20">
+                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1B2CC1]/20 border border-[#1B2CC1]/50 text-[#ABD2FA] text-[10px] font-mono font-bold tracking-wider uppercase">
+                          <span>LEADERSHIP · {selectedMember.num}</span>
                         </div>
+                        <button
+                          type="button"
+                          onClick={() => setSelectedId(null)}
+                          className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-slate-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer text-sm"
+                          aria-label="Close modal"
+                        >
+                          ✕
+                        </button>
                       </div>
-                    )}
+
+                      {/* Individual Member Cutout Portrait */}
+                      <div className="relative w-full h-64 sm:h-72 flex items-end justify-center overflow-hidden">
+                        <div
+                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 pointer-events-none opacity-35 blur-3xl rounded-full"
+                          style={{
+                            background: "radial-gradient(circle, #1B2CC1 0%, transparent 70%)",
+                          }}
+                        />
+                        <Image
+                          src={selectedMember.image}
+                          alt={selectedMember.name}
+                          width={340}
+                          height={400}
+                          priority
+                          className="relative z-10 max-h-full w-auto object-contain object-bottom filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.85)]"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#090c19] to-transparent z-10" />
+                      </div>
+
+                      {/* Member Details */}
+                      <div className="p-5 sm:p-6 pt-2 text-left">
+                        <div className="flex items-baseline justify-between mb-0.5">
+                          <h3 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight">
+                            {selectedMember.name}
+                          </h3>
+                          <span className="text-[11px] font-mono font-semibold text-[#ABD2FA]">
+                            {selectedMember.department}
+                          </span>
+                        </div>
+
+                        <p className="text-xs sm:text-sm font-semibold text-[#5B7BFF] mb-2.5">
+                          {selectedMember.role}
+                        </p>
+
+                        <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal mb-4">
+                          {selectedMember.description}
+                        </p>
+
+                        {/* Social Media Links */}
+                        {(selectedMember.linkedIn || selectedMember.instagram) && (
+                          <div className="flex items-center gap-3 pt-3 border-t border-white/10">
+                            <span className="text-xs font-semibold text-slate-400">Connect:</span>
+                            <div className="flex items-center gap-2">
+                              {selectedMember.linkedIn && (
+                                <a
+                                  href={selectedMember.linkedIn}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-[#0077b5] text-white text-xs font-semibold transition-all hover:scale-105 shadow-xs"
+                                  aria-label={`${selectedMember.name} on LinkedIn`}
+                                >
+                                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                                  </svg>
+                                  <span>LinkedIn</span>
+                                </a>
+                              )}
+                              {selectedMember.instagram && (
+                                <a
+                                  href={selectedMember.instagram}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] text-white text-xs font-semibold transition-all hover:scale-105 shadow-xs"
+                                  aria-label={`${selectedMember.name} on Instagram`}
+                                >
+                                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                  </svg>
+                                  <span>Instagram</span>
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
                   </div>
-                </motion.div>
-              </div>
-            );
-          })()}
-        </AnimatePresence>
+                );
+              })()}
+            </AnimatePresence>,
+            document.body
+          )}
       </div>
     </section>
   );
