@@ -151,27 +151,21 @@
 
 .hero-nav-link {
   text-decoration: none;
-  color: #333333;
+  color: #475569;
   font-size: .8rem;
   font-weight: 600;
   letter-spacing: .06em;
   text-transform: uppercase;
   position: relative;
+  padding: 4px 2px;
   transition: color .2s;
   white-space: nowrap;
 }
-.hero-nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #0D7377;
-  transition: width .25s ease;
+.hero-nav-link:hover { color: #1B2CC1; }
+.hero-nav-link.is-active {
+  color: #1B2CC1;
+  font-weight: 700;
 }
-.hero-nav-link:hover { color: #0D7377; }
-.hero-nav-link:hover::after { width: 100%; }
 
 .hero-nav-actions {
   display: flex;

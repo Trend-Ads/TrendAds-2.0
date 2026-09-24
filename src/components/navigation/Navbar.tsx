@@ -8,19 +8,62 @@ import { motion, AnimatePresence } from "framer-motion";
 export interface NavItem {
   label: string;
   href: string;
+  id: string;
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Home", href: "#hero" },
-  { label: "About Us", href: "#about-us" },
-  { label: "Services", href: "#services" },
-  { label: "Board Members", href: "#board-members" },
-  { label: "Process Steps", href: "#process-steps" },
+  { label: "Home", href: "#hero", id: "hero" },
+  { label: "About Us", href: "#about-us", id: "about-us" },
+  { label: "Services", href: "#services", id: "services" },
+  { label: "Board Members", href: "#board-members", id: "board-members" },
+  { label: "Process Steps", href: "#process-steps", id: "process-steps" },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("hero");
+
+  // Smooth scroll handler for both desktop and mobile
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+
+    if (href.startsWith("#")) {
+      const targetId = href.replace("#", "");
+      document.body.style.overflow = "";
+
+      setTimeout(() => {
+        const win = window as unknown as {
+          lenis?: {
+            scrollTo: (
+              target: number | HTMLElement | string,
+              opts?: { offset?: number; duration?: number; immediate?: boolean }
+            ) => void;
+          };
+        };
+
+        if (targetId === "hero") {
+          if (win.lenis) {
+            win.lenis.scrollTo(0, { duration: 1.2 });
+          } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+          return;
+        }
+
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          if (win.lenis) {
+            win.lenis.scrollTo(targetEl, { offset: -70, duration: 1.2 });
+          } else {
+            const top = targetEl.getBoundingClientRect().top + window.scrollY - 70;
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        }
+      }, 60);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +80,44 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  // Track active section as user scrolls
+  useEffect(() => {
+    const handleScrollSpy = () => {
+      const scrollPosition = window.scrollY + 220;
+      const windowBottom = window.scrollY + window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
+      if (windowBottom >= docHeight - 80) {
+        setActiveSection("contact");
+        return;
+      }
+
+      const sectionList = [
+        { id: "contact", el: document.getElementById("contact") },
+        { id: "process-steps", el: document.getElementById("process-steps") },
+        { id: "board-members", el: document.getElementById("board-members") },
+        { id: "services", el: document.getElementById("services") },
+        { id: "services", el: document.getElementById("find-services") },
+        { id: "about-us", el: document.getElementById("about-us") },
+        { id: "hero", el: document.getElementById("hero") },
+      ];
+
+      for (const item of sectionList) {
+        if (!item.el) continue;
+        const rect = item.el.getBoundingClientRect();
+        const top = rect.top + window.scrollY;
+        if (scrollPosition >= top - 80) {
+          setActiveSection(item.id);
+          break;
+        }
+      }
+    };
+
+    handleScrollSpy();
+    window.addEventListener("scroll", handleScrollSpy, { passive: true });
+    return () => window.removeEventListener("scroll", handleScrollSpy);
   }, []);
 
   // Prevent background scrolling while full-screen mobile menu is open
@@ -107,18 +188,41 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         <ul className="hero-nav-links" role="list">
-          {NAV_ITEMS.map((item) => (
-            <li key={item.label}>
-              <a href={item.href} className="hero-nav-link">
-                {item.label}
-              </a>
-            </li>
-          ))}
+          {NAV_ITEMS.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <li key={item.label} className="relative">
+                <a
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`hero-nav-link ${isActive ? "is-active text-[#1B2CC1]" : ""}`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-active-pill"
+                      className="absolute -bottom-1 left-0 right-0 h-[2.5px] rounded-full bg-[#1B2CC1] shadow-[0_0_8px_rgba(27,44,193,0.65)]"
+                      transition={{ type: "spring", stiffness: 420, damping: 32 }}
+                    />
+                  )}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Action / Contact CTA Button */}
         <div className="hero-nav-actions shrink-0">
-          <a href="#contact" id="hero-contact-cta" className="hero-nav-cta hidden sm:inline-flex">
+          <a
+            href="#contact"
+            id="hero-contact-cta"
+            onClick={(e) => handleNavClick(e, "#contact")}
+            className={`hero-nav-cta hidden sm:inline-flex transition-all duration-300 ${
+              activeSection === "contact"
+                ? "!bg-[#1B2CC1] shadow-[0_0_15px_rgba(27,44,193,0.5)] scale-105"
+                : ""
+            }`}
+          >
             Contact
           </a>
 
@@ -200,44 +304,89 @@ export default function Navbar() {
               className="flex flex-col gap-6 sm:gap-8 my-auto py-8"
               role="list"
             >
-              {NAV_ITEMS.map((item, idx) => (
-                <motion.li key={item.label} variants={listItemVariants}>
-                  <a
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="group flex items-center justify-between text-2xl sm:text-3xl font-black uppercase text-[#212121] hover:text-[#0D7377] transition-colors tracking-tight"
-                  >
-                    <div className="flex items-baseline gap-4">
-                      <span className="text-xs font-mono font-bold text-[#0D7377] transition-colors">
-                        0{idx + 1}
+              {NAV_ITEMS.map((item, idx) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <motion.li key={item.label} variants={listItemVariants}>
+                    <a
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className={`group flex items-center justify-between text-2xl sm:text-3xl font-black uppercase transition-all tracking-tight ${
+                        isActive
+                          ? "text-[#1B2CC1] pl-3 border-l-4 border-[#1B2CC1]"
+                          : "text-[#212121] hover:text-[#1B2CC1]"
+                      }`}
+                    >
+                      <div className="flex items-baseline gap-4">
+                        <span
+                          className={`text-xs font-mono font-bold transition-colors ${
+                            isActive
+                              ? "text-[#1B2CC1]"
+                              : "text-slate-400 group-hover:text-[#1B2CC1]"
+                          }`}
+                        >
+                          0{idx + 1}
+                        </span>
+                        <span className="transition-transform group-hover:translate-x-1 duration-200 flex items-center gap-3">
+                          {item.label}
+                          {isActive && (
+                            <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-[#1B2CC1]/10 text-[#1B2CC1] border border-[#1B2CC1]/30 tracking-wider">
+                              CURRENT
+                            </span>
+                          )}
+                        </span>
+                      </div>
+                      <span
+                        className={`text-xl transition-all ${
+                          isActive
+                            ? "text-[#1B2CC1] translate-x-1"
+                            : "text-slate-300 group-hover:text-[#1B2CC1] group-hover:translate-x-1.5"
+                        }`}
+                      >
+                        →
                       </span>
-                      <span className="transition-transform group-hover:translate-x-1 duration-200">
-                        {item.label}
-                      </span>
-                    </div>
-                    <span className="text-xl text-slate-400 group-hover:text-[#0D7377] group-hover:translate-x-1.5 transition-all">
-                      →
-                    </span>
-                  </a>
-                </motion.li>
-              ))}
+                    </a>
+                  </motion.li>
+                );
+              })}
 
               {/* Extra Contact Direct Link */}
               <motion.li variants={listItemVariants}>
                 <a
                   href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="group flex items-center justify-between text-2xl sm:text-3xl font-black uppercase text-[#212121] hover:text-[#0D7377] transition-colors tracking-tight"
+                  onClick={(e) => handleNavClick(e, "#contact")}
+                  className={`group flex items-center justify-between text-2xl sm:text-3xl font-black uppercase transition-all tracking-tight ${
+                    activeSection === "contact"
+                      ? "text-[#1B2CC1] pl-3 border-l-4 border-[#1B2CC1]"
+                      : "text-[#212121] hover:text-[#1B2CC1]"
+                  }`}
                 >
                   <div className="flex items-baseline gap-4">
-                    <span className="text-xs font-mono font-bold text-[#0D7377] transition-colors">
+                    <span
+                      className={`text-xs font-mono font-bold transition-colors ${
+                        activeSection === "contact"
+                          ? "text-[#1B2CC1]"
+                          : "text-slate-400 group-hover:text-[#1B2CC1]"
+                      }`}
+                    >
                       0{NAV_ITEMS.length + 1}
                     </span>
-                    <span className="transition-transform group-hover:translate-x-1 duration-200">
+                    <span className="transition-transform group-hover:translate-x-1 duration-200 flex items-center gap-3">
                       Contact
+                      {activeSection === "contact" && (
+                        <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-[#1B2CC1]/10 text-[#1B2CC1] border border-[#1B2CC1]/30 tracking-wider">
+                          CURRENT
+                        </span>
+                      )}
                     </span>
                   </div>
-                  <span className="text-xl text-slate-400 group-hover:text-[#0D7377] group-hover:translate-x-1.5 transition-all">
+                  <span
+                    className={`text-xl transition-all ${
+                      activeSection === "contact"
+                        ? "text-[#1B2CC1] translate-x-1"
+                        : "text-slate-300 group-hover:text-[#1B2CC1] group-hover:translate-x-1.5"
+                    }`}
+                  >
                     →
                   </span>
                 </a>
@@ -253,8 +402,8 @@ export default function Navbar() {
             >
               <a
                 href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-4 px-6 rounded-xl bg-[#212121] text-white font-black text-sm uppercase tracking-wider text-center hover:bg-[#0D7377] transition-all shadow-[0_8px_24px_rgba(0,0,0,0.15)]"
+                onClick={(e) => handleNavClick(e, "#contact")}
+                className="w-full py-4 px-6 rounded-xl bg-[#010736] text-white font-black text-sm uppercase tracking-wider text-center hover:bg-[#1B2CC1] transition-all shadow-[0_8px_24px_rgba(1,7,54,0.25)]"
               >
                 Start Your Project
               </a>
