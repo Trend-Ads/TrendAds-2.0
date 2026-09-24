@@ -462,7 +462,7 @@ export default function ServicesHorizontalSection() {
         <div className="relative z-50 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex flex-col sm:flex-row items-center justify-between gap-3 pt-1">
           <div className="flex items-center gap-3 text-xs font-mono text-slate-700">
             <span className="text-[#010736] font-black">PILLAR {activeStep} OF 4</span>
-            <span>{"//"}</span>
+            <span className="text-slate-400">·</span>
             <span className="font-semibold text-[#010736]">
               {SERVICE_CARDS[activeStep - 1]?.title}
             </span>

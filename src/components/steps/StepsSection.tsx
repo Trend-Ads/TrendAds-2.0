@@ -369,7 +369,7 @@ export default function StepsSection() {
             >
               <div className="flex items-center justify-between mb-1.5">
                 <span className="text-xs font-mono font-bold text-[#ABD2FA]">
-                  STAGE // {activeStep.num}
+                  STAGE · {activeStep.num}
                 </span>
                 <span className="text-[10px] font-bold text-[#ABD2FA] bg-[#1B2CC1]/40 px-2 py-0.5 rounded-full border border-[#1B2CC1]">
                   {activeStep.metric}

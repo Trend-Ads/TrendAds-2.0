@@ -12,6 +12,8 @@ interface BoardMember {
   department: string;
   image: string;
   description: string;
+  linkedIn?: string;
+  instagram?: string;
   // Exact coordinates on main-bg.png (1145 x 1374)
   xPct: number; // Center X %
   yPct: number; // Center Y %
@@ -37,12 +39,14 @@ const BOARD_MEMBERS: BoardMember[] = [
   {
     id: "neeraj",
     num: "01",
-    name: "Neeraj",
-    role: "Board Member",
+    name: "Neeraj Sudheer",
+    role: "Founder & CEO",
     department: "Executive Leadership",
     image: "/board-members/neeraj.png",
+    linkedIn: "https://www.linkedin.com/in/neeraj-sudheer-4b8528360",
+    instagram: "https://www.instagram.com/neeraj_nrj.in",
     description:
-      "Spearheading strategic initiatives, enterprise scale, and long-term vision, guiding Trend Ads toward international category leadership.",
+      "Spearheading strategic initiatives, enterprise scale, and long-term vision, guiding Trend Ads toward international category leadership as Founder & CEO.",
     xPct: 49.3,
     yPct: 18.0,
     radiusPct: 11.5,
@@ -52,12 +56,14 @@ const BOARD_MEMBERS: BoardMember[] = [
   {
     id: "nishad",
     num: "02",
-    name: "Nishad",
-    role: "Board Member",
+    name: "Nishad. S",
+    role: "COO - Chief Operating Officer",
     department: "Strategic Direction",
     image: "/board-members/nishad.png",
+    linkedIn: "https://www.linkedin.com/in/nishad-mathur-palakkode-15a28b186?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    instagram: "https://www.instagram.com/nishad_coo?stkn=N2IzMmh5ZzYxemtw",
     description:
-      "Driving brand vision and corporate strategy, aligning long-term market opportunities with high-impact creative execution.",
+      "Directing operational workflows, scalable business delivery, and high-impact agency operations as Chief Operating Officer.",
     xPct: 29.2,
     yPct: 28.0,
     radiusPct: 11.0,
@@ -67,12 +73,14 @@ const BOARD_MEMBERS: BoardMember[] = [
   {
     id: "nithin",
     num: "03",
-    name: "Nithin",
-    role: "Board Member",
-    department: "Technology & Systems",
+    name: "Nithinkumar ks",
+    role: "Creative Director",
+    department: "Creative & Brand Vision",
     image: "/board-members/nithin.png",
+    linkedIn: "https://www.linkedin.com/in/nithinkumar-ks-482659381",
+    instagram: "https://www.instagram.com/nitin_graphics_designerr",
     description:
-      "Overseeing technological infrastructure and modern digital platforms that power high-velocity client growth and digital dominance.",
+      "Overseeing design direction, artistic excellence, and high-standard creative execution across all agency deliverables as Creative Director.",
     xPct: 69.7,
     yPct: 29.5,
     radiusPct: 11.0,
@@ -82,12 +90,14 @@ const BOARD_MEMBERS: BoardMember[] = [
   {
     id: "vismay",
     num: "04",
-    name: "Vismay",
-    role: "Board Member",
-    department: "Operations & Growth",
+    name: "Vismay V J",
+    role: "CMO - Chief Marketing Officer",
+    department: "Marketing & Growth",
     image: "/board-members/vismay.png",
+    linkedIn: "https://www.linkedin.com/in/vismayvj/",
+    instagram: "https://www.instagram.com/v_i_s_m__a_y",
     description:
-      "Directing operational excellence and scalable client delivery frameworks across global digital marketing channels.",
+      "Driving global marketing growth, client acquisition campaigns, and full-funnel brand visibility as Chief Marketing Officer.",
     xPct: 77.0,
     yPct: 44.0,
     radiusPct: 11.2,
@@ -97,12 +107,14 @@ const BOARD_MEMBERS: BoardMember[] = [
   {
     id: "sreerag",
     num: "05",
-    name: "Sreerag",
-    role: "Board Member",
+    name: "Sreerag P.P",
+    role: "Creative Head",
     department: "Creative Strategy",
     image: "/board-members/sreerag.png",
+    linkedIn: "https://www.linkedin.com/in/sreeragh-p-p-a4b786434?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    instagram: "https://www.instagram.com/sreeragh.official",
     description:
-      "Championing bold creative direction, innovative 3D visual languages, and award-winning campaign architecture.",
+      "Championing bold visual identities, innovative design strategies, and breakthrough creative concepts as Creative Head.",
     xPct: 49.7,
     yPct: 42.0,
     radiusPct: 10.8,
@@ -112,12 +124,14 @@ const BOARD_MEMBERS: BoardMember[] = [
   {
     id: "shamveel",
     num: "06",
-    name: "Shamveel",
-    role: "Board Member",
-    department: "Media & Acquisition",
+    name: "Shamveel P",
+    role: "HWD - Head of Web Development",
+    department: "Web Engineering & Tech",
     image: "/board-members/shamveel.png",
+    linkedIn: "https://www.linkedin.com/in/shamveel-p/",
+    instagram: "https://www.instagram.com/_shamveel._/",
     description:
-      "Architecting algorithmic media buying, paid scaling frameworks, and performance-driven revenue compounding.",
+      "Architecting modern web platforms, interactive web experiences, and scalable front-end systems as Head of Web Development.",
     xPct: 19.5,
     yPct: 44.0,
     radiusPct: 11.0,
@@ -127,12 +141,13 @@ const BOARD_MEMBERS: BoardMember[] = [
   {
     id: "parveen",
     num: "07",
-    name: "Parveen",
-    role: "Board Member",
-    department: "Brand Governance",
+    name: "Parveen Musthafa",
+    role: "Marketing Head",
+    department: "Campaigns & Outreach",
     image: "/board-members/parveen.png",
+    linkedIn: "https://in.linkedin.com/in/parveen-n-542694435",
     description:
-      "Guiding brand integrity, client partnership standards, and sustainable cross-market enterprise governance.",
+      "Leading client engagement campaigns, brand outreach strategies, and high-impact marketing initiatives as Marketing Head.",
     xPct: 16.5,
     yPct: 65.0,
     radiusPct: 12.0,
@@ -142,12 +157,13 @@ const BOARD_MEMBERS: BoardMember[] = [
   {
     id: "alka",
     num: "08",
-    name: "Alka",
-    role: "Board Member",
-    department: "People & Organization",
+    name: "Alka Manoj",
+    role: "Head of Content & Creative",
+    department: "Content & Storytelling",
     image: "/board-members/alka.png",
+    instagram: "https://www.instagram.com/aerin_nnnn13?igsi=M2NuaDE1NXVkNnNy",
     description:
-      "Cultivating high-performance agency culture, organizational leadership, and executive talent acceleration.",
+      "Curating compelling digital content, multi-platform brand storytelling, and campaign messaging as Head of Content & Creative.",
     xPct: 41.5,
     yPct: 66.0,
     radiusPct: 12.0,
@@ -157,12 +173,12 @@ const BOARD_MEMBERS: BoardMember[] = [
   {
     id: "anumol",
     num: "09",
-    name: "Anumol",
-    role: "Board Member",
-    department: "Finance & Advisory",
+    name: "Anumole A",
+    role: "Mentor & Strategic Advisor",
+    department: "Strategic Advisory",
     image: "/board-members/anumol.png",
     description:
-      "Steering financial governance, fiscal discipline, and venture resource allocation for scalable expansion.",
+      "Providing executive mentorship, leadership guidance, and enterprise strategic counsel as Mentor & Strategic Advisor.",
     xPct: 63.5,
     yPct: 66.0,
     radiusPct: 12.0,
@@ -172,12 +188,12 @@ const BOARD_MEMBERS: BoardMember[] = [
   {
     id: "beena",
     num: "10",
-    name: "Beena",
-    role: "Board Member",
-    department: "Corporate Governance",
+    name: "Beena Mohammed Ali",
+    role: "Creative Head",
+    department: "Creative Direction",
     image: "/board-members/beena.png",
     description:
-      "Ensuring regulatory excellence, corporate compliance, and long-term shareholder trust across all operations.",
+      "Guiding creative standards, brand aesthetic excellence, and quality execution across agency projects as Creative Head.",
     xPct: 84.5,
     yPct: 67.0,
     radiusPct: 12.0,
@@ -279,21 +295,13 @@ export default function BoardMembersSection() {
         
         {/* ── Section Header ── */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ff5419]/10 border border-[#ff5419]/25 text-[#ff7a45] text-xs font-bold tracking-wider uppercase mb-4 shadow-[0_0_20px_rgba(255,84,25,0.2)]">
-            <span className="w-2 h-2 rounded-full bg-[#ff5419] animate-pulse" />
-            EXECUTIVE COUNCIL
-          </div>
-
+         
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12]">
-            Board of Directors <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-white/70">
-              & Executive Council
-            </span>
+            Board Members <br className="hidden sm:inline" />
           </h2>
 
           <p className="mt-3.5 text-sm sm:text-base text-slate-400 font-normal leading-relaxed max-w-2xl mx-auto">
-            10 visionary leaders united in one cohesive leadership ensemble.
-            Hover or tap any member to spotlight their strategic profile.
+            The visionary leaders shaping the future of Trend Ads.
           </p>
         </div>
 
@@ -330,7 +338,7 @@ export default function BoardMembersSection() {
                         isSelected ? "text-[#ff7a45]" : "text-slate-400 group-hover:text-[#ff7a45]"
                       }`}
                     >
-                      // {member.num}
+                      {member.num}
                     </span>
                     <h3
                       className={`text-sm lg:text-base font-black uppercase tracking-tight leading-tight transition-colors ${
@@ -339,9 +347,43 @@ export default function BoardMembersSection() {
                     >
                       {member.name}
                     </h3>
-                    <p className="text-[11px] text-slate-400 font-medium leading-tight">
-                      {member.department}
+                    <p className="text-[11px] text-slate-300 font-medium leading-tight">
+                      {member.role}
                     </p>
+                    {(member.linkedIn || member.instagram) && (
+                      <div className="flex items-center gap-1.5 mt-1.5">
+                        {member.linkedIn && (
+                          <a
+                            href={member.linkedIn}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="w-5 h-5 rounded-full bg-white/10 hover:bg-[#0077b5] text-white flex items-center justify-center transition-all hover:scale-110 shadow-xs"
+                            aria-label={`${member.name} on LinkedIn`}
+                            title="LinkedIn"
+                          >
+                            <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                          </a>
+                        )}
+                        {member.instagram && (
+                          <a
+                            href={member.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="w-5 h-5 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] text-white flex items-center justify-center transition-all hover:scale-110 shadow-xs"
+                            aria-label={`${member.name} on Instagram`}
+                            title="Instagram"
+                          >
+                            <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </button>
                 </div>
               );
@@ -349,7 +391,7 @@ export default function BoardMembersSection() {
           </div>
 
           {/* ── EDITORIAL SIDE LABELS: RIGHT COLUMN (Desktop only) ── */}
-          <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[190px] z-30 pointer-events-none">
+          <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[200px] z-30 pointer-events-none">
             {BOARD_MEMBERS.filter((m) => m.labelSide === "right").map((member) => {
               const isSelected = activeId === member.id;
               const isOther = Boolean(activeId) && !isSelected;
@@ -378,7 +420,7 @@ export default function BoardMembersSection() {
                         isSelected ? "text-[#ff7a45]" : "text-slate-400 group-hover:text-[#ff7a45]"
                       }`}
                     >
-                      {member.num} //
+                      {member.num}
                     </span>
                     <h3
                       className={`text-sm lg:text-base font-black uppercase tracking-tight leading-tight transition-colors ${
@@ -387,9 +429,43 @@ export default function BoardMembersSection() {
                     >
                       {member.name}
                     </h3>
-                    <p className="text-[11px] text-slate-400 font-medium leading-tight">
-                      {member.department}
+                    <p className="text-[11px] text-slate-300 font-medium leading-tight">
+                      {member.role}
                     </p>
+                    {(member.linkedIn || member.instagram) && (
+                      <div className="flex items-center justify-end gap-1.5 mt-1.5 ml-auto">
+                        {member.linkedIn && (
+                          <a
+                            href={member.linkedIn}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="w-5 h-5 rounded-full bg-white/10 hover:bg-[#0077b5] text-white flex items-center justify-center transition-all hover:scale-110 shadow-xs"
+                            aria-label={`${member.name} on LinkedIn`}
+                            title="LinkedIn"
+                          >
+                            <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                          </a>
+                        )}
+                        {member.instagram && (
+                          <a
+                            href={member.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="w-5 h-5 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] text-white flex items-center justify-center transition-all hover:scale-110 shadow-xs"
+                            aria-label={`${member.name} on Instagram`}
+                            title="Instagram"
+                          >
+                            <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </button>
                 </div>
               );
@@ -516,7 +592,7 @@ export default function BoardMembersSection() {
                         transition={{ duration: 0.2 }}
                         className="absolute -top-7 left-1/2 -translate-x-1/2 z-40 px-2.5 py-0.5 rounded-full bg-[#ff5419] text-white text-[9.5px] font-mono font-bold tracking-wider uppercase shadow-[0_0_18px_rgba(255,84,25,0.7)] whitespace-nowrap pointer-events-none"
                       >
-                        {member.num} // {member.name}
+                        {member.num} · {member.name}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -555,7 +631,7 @@ export default function BoardMembersSection() {
                   {/* Header Bar */}
                   <div className="flex items-center justify-between px-5 pt-4 pb-1 z-20">
                     <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ff5419]/15 border border-[#ff5419]/30 text-[#ff7a45] text-[10px] font-mono font-bold tracking-wider uppercase">
-                      <span>LEADERSHIP // {selectedMember.num}</span>
+                      <span>LEADERSHIP · {selectedMember.num}</span>
                     </div>
                     <button
                       type="button"
@@ -601,9 +677,46 @@ export default function BoardMembersSection() {
                       {selectedMember.role}
                     </p>
 
-                    <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal mb-4">
                       {selectedMember.description}
                     </p>
+
+                    {/* Social Media Links */}
+                    {(selectedMember.linkedIn || selectedMember.instagram) && (
+                      <div className="flex items-center gap-3 pt-3 border-t border-white/10">
+                        <span className="text-xs font-semibold text-slate-400">Connect:</span>
+                        <div className="flex items-center gap-2">
+                          {selectedMember.linkedIn && (
+                            <a
+                              href={selectedMember.linkedIn}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-[#0077b5] text-white text-xs font-semibold transition-all hover:scale-105 shadow-xs"
+                              aria-label={`${selectedMember.name} on LinkedIn`}
+                            >
+                              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                              </svg>
+                              <span>LinkedIn</span>
+                            </a>
+                          )}
+                          {selectedMember.instagram && (
+                            <a
+                              href={selectedMember.instagram}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] text-white text-xs font-semibold transition-all hover:scale-105 shadow-xs"
+                              aria-label={`${selectedMember.name} on Instagram`}
+                            >
+                              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                              </svg>
+                              <span>Instagram</span>
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               </div>
