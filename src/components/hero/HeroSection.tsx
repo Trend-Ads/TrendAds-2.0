@@ -98,7 +98,15 @@ export default function HeroSection() {
       <div className="hero-social-proof" aria-label="Social proof">
         <div className="hero-avatars" aria-hidden="true">
           {[1, 2, 3].map((i) => (
-            <div key={i} className={`hero-avatar hero-avatar-${i}`} />
+            <div key={i} className={`hero-avatar hero-avatar-${i}`}>
+              <Image
+                src={`/avatars/avatar-${i}.jpg`}
+                alt={`Client profile ${i}`}
+                width={32}
+                height={32}
+                className="w-full h-full object-cover rounded-full select-none pointer-events-none"
+              />
+            </div>
           ))}
         </div>
         <p className="hero-social-text">

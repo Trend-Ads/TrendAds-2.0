@@ -307,26 +307,33 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,.7);
+  border: 2px solid rgba(255,255,255,.8);
   margin-left: -8px;
   background: #444;
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s, border-color 0.2s, z-index 0.25s;
 }
 .hero-avatars .hero-avatar:first-child { margin-left: 0; }
 
+.hero-avatar:hover {
+  transform: scale(1.16);
+  z-index: 10;
+  border-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
 .hero-avatar-1 {
-  background-color: #6b4226;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='35' r='22' fill='%23d4956a'/%3E%3Cellipse cx='50' cy='95' rx='38' ry='30' fill='%23d4956a'/%3E%3C/svg%3E");
+  background-image: url("/avatars/avatar-1.jpg");
 }
 .hero-avatar-2 {
-  background-color: #2a2a3e;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='35' r='22' fill='%23c8a882'/%3E%3Cellipse cx='50' cy='95' rx='38' ry='30' fill='%23c8a882'/%3E%3C/svg%3E");
+  background-image: url("/avatars/avatar-2.jpg");
 }
 .hero-avatar-3 {
-  background-color: #1a3a2a;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='35' r='22' fill='%23a07850'/%3E%3Cellipse cx='50' cy='95' rx='38' ry='30' fill='%23a07850'/%3E%3C/svg%3E");
+  background-image: url("/avatars/avatar-3.jpg");
 }
 
 .hero-social-text {
