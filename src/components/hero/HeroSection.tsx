@@ -112,7 +112,7 @@ export default function HeroSection() {
         </div>
         <div className="hero-social-text flex items-center gap-2">
           <span><strong>100+</strong> Projects Delivered Worldwide</span>
-          <SourceBadge sourceId="projects-delivered" size="xs" align="left" />
+          {/* <SourceBadge sourceId="projects-delivered" size="xs" align="left" className="hidden md:inline-flex" /> */}
         </div>
       </div>
 
