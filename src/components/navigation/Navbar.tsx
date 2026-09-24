@@ -125,13 +125,28 @@ export default function Navbar() {
           {/* Mobile Hamburger Button */}
           <button
             type="button"
-            className="hero-mobile-toggle shrink-0"
+            className="hero-mobile-toggle shrink-0 group focus:outline-none"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen((prev) => !prev)}
           >
-            <span className={`hero-hamburger-line ${mobileMenuOpen ? "open" : ""}`} />
-            <span className={`hero-hamburger-line ${mobileMenuOpen ? "open" : ""}`} />
+            <div className="w-[20px] h-[14px] flex flex-col justify-between items-end relative pointer-events-none">
+              <motion.span
+                animate={mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full h-[2px] bg-[#18181b] group-hover:bg-[#1B2CC1] rounded-full origin-center transition-colors"
+              />
+              <motion.span
+                animate={mobileMenuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+                transition={{ duration: 0.18 }}
+                className="w-[13px] group-hover:w-full h-[2px] bg-[#1B2CC1] rounded-full transition-all duration-200 origin-right"
+              />
+              <motion.span
+                animate={mobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full h-[2px] bg-[#18181b] group-hover:bg-[#1B2CC1] rounded-full origin-center transition-colors"
+              />
+            </div>
           </button>
         </div>
       </nav>

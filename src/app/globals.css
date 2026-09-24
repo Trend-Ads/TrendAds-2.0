@@ -219,38 +219,27 @@
 /* Mobile hamburger button */
 .hero-mobile-toggle {
   display: none;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 5px;
-  width: 38px;
-  height: 38px;
-  background: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
   cursor: pointer;
-  padding: 8px;
-  transition: background 0.2s, border-color 0.2s;
+  padding: 0;
+  color: #18181b;
+  box-shadow: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .hero-mobile-toggle:hover {
-  background: #e2e8f0;
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
 }
 
-.hero-hamburger-line {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background-color: #212121;
-  border-radius: 2px;
-  transition: transform 0.25s, opacity 0.25s;
-}
-
-.hero-hamburger-line.open:first-child {
-  transform: translateY(3.5px) rotate(45deg);
-}
-
-.hero-hamburger-line.open:last-child {
-  transform: translateY(-3.5px) rotate(-45deg);
+.hero-mobile-toggle:active {
+  transform: scale(0.92);
 }
 
 /* Mobile drawer */
