@@ -307,7 +307,7 @@ export default function BoardMembersSection() {
     <section
       ref={containerRef}
       id="board-members"
-      className="bg-[#07080b] pt-20 sm:pt-28 lg:pt-32 pb-2 sm:pb-4 lg:pb-6 relative overflow-hidden text-white select-none"
+      className="bg-[#07080b] pt-16 sm:pt-28 lg:pt-32 pb-2 sm:pb-4 lg:pb-6 relative overflow-hidden text-white select-none"
     >
       {/* ── Cinematic Studio Ambient Atmosphere ── */}
       <div
@@ -341,7 +341,7 @@ export default function BoardMembersSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* ── Section Header ── */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
          
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12]">
             Board Members <br className="hidden sm:inline" />
@@ -524,7 +524,7 @@ export default function BoardMembersSection() {
             ref={stageRef}
             onPointerMove={handlePointerMove}
             onPointerLeave={handlePointerLeave}
-            className="relative w-full max-w-[660px] sm:max-w-[700px] lg:max-w-[740px] mx-auto aspect-[1145/1374] overflow-visible mb-0"
+            className="relative w-[calc(100%+1.25rem)] -mx-2.5 sm:w-full sm:mx-auto max-w-[660px] sm:max-w-[700px] lg:max-w-[740px] aspect-[1145/1374] overflow-visible mb-0"
             style={{
               transform: `perspective(1000px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
               transition: "transform 0.15s cubic-bezier(0.2, 0, 0.3, 1)",
@@ -637,7 +637,7 @@ export default function BoardMembersSection() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 5, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute -top-7 left-1/2 -translate-x-1/2 z-40 px-2.5 py-0.5 rounded-full bg-[#1B2CC1] text-white text-[9.5px] font-mono font-bold tracking-wider uppercase shadow-[0_0_18px_rgba(27,44,193,0.85)] border border-[#ABD2FA]/40 whitespace-nowrap pointer-events-none"
+                        className="absolute -top-6 sm:-top-7 left-1/2 -translate-x-1/2 z-40 px-2 sm:px-2.5 py-0.5 rounded-full bg-[#1B2CC1] text-white text-[9px] sm:text-[9.5px] font-mono font-bold tracking-wider uppercase shadow-[0_0_18px_rgba(27,44,193,0.85)] border border-[#ABD2FA]/40 whitespace-nowrap pointer-events-none"
                       >
                         {member.num} · {member.name}
                       </motion.div>
