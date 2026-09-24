@@ -21,7 +21,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://trend-ads.com/sitemap.xml",
-    host: "https://trend-ads.com",
+    sitemap: "https://www.trend-ads.com/sitemap.xml",
+    host: "https://www.trend-ads.com",
   };
 }

@@ -4,7 +4,7 @@ import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://trend-ads.com"),
+  metadataBase: new URL("https://www.trend-ads.com"),
   title: {
     default: "Trend Ads — Creative Advertising & Digital Growth Agency",
     template: "%s | Trend Ads",
@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     "CRO conversion rate optimization",
     "Trend Ads",
   ],
-  authors: [{ name: "Trend Ads", url: "https://trend-ads.com" }],
+  authors: [{ name: "Trend Ads", url: "https://www.trend-ads.com" }],
   creator: "Trend Ads",
   publisher: "Trend Ads",
   category: "Advertising & Marketing",
   alternates: {
-    canonical: "https://trend-ads.com",
+    canonical: "https://www.trend-ads.com",
   },
   robots: {
     index: true,
@@ -48,11 +48,11 @@ export const metadata: Metadata = {
     title: "Trend Ads — Creative Advertising & Digital Growth Agency",
     description:
       "Crafting bold digital products, brand systems, and advertising experiences that drive real growth.",
-    url: "https://trend-ads.com",
+    url: "https://www.trend-ads.com",
     siteName: "Trend Ads",
     images: [
       {
-        url: "https://trend-ads.com/logos/logo.png",
+        url: "https://www.trend-ads.com/logos/logo.png",
         width: 1200,
         height: 630,
         alt: "Trend Ads Creative Advertising Agency",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "Trend Ads — Creative Advertising & Digital Growth Agency",
     description:
       "Crafting bold digital products, brand systems, and advertising experiences that drive real growth.",
-    images: ["https://trend-ads.com/logos/logo.png"],
+    images: ["https://www.trend-ads.com/logos/logo.png"],
     creator: "@trend_ads",
   },
   icons: {
@@ -89,7 +89,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://trend-ads.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

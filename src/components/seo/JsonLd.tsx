@@ -2,12 +2,12 @@ export default function JsonLd() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://trend-ads.com/#organization",
+    "@id": "https://www.trend-ads.com/#organization",
     "name": "Trend Ads",
     "alternateName": ["Trend Ads Agency", "TrendAds"],
-    "url": "https://trend-ads.com",
-    "logo": "https://trend-ads.com/logos/logo.png",
-    "image": "https://trend-ads.com/logos/logo.png",
+    "url": "https://www.trend-ads.com",
+    "logo": "https://www.trend-ads.com/logos/logo.png",
+    "image": "https://www.trend-ads.com/logos/logo.png",
     "description":
       "Trend Ads is a premier creative advertising agency crafting bold digital products, high-converting brand systems, and performance marketing campaigns.",
     "telephone": "+91-9746730297",
@@ -28,24 +28,24 @@ export default function JsonLd() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://trend-ads.com/#website",
-    "url": "https://trend-ads.com",
+    "@id": "https://www.trend-ads.com/#website",
+    "url": "https://www.trend-ads.com",
     "name": "Trend Ads — Creative Advertising & Digital Growth Agency",
     "description":
       "A creative studio crafting bold digital products, brand systems, and advertising experiences that drive real revenue growth.",
     "publisher": {
-      "@id": "https://trend-ads.com/#organization"
+      "@id": "https://www.trend-ads.com/#organization"
     }
   };
 
   const professionalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "@id": "https://trend-ads.com/#service",
+    "@id": "https://www.trend-ads.com/#service",
     "name": "Trend Ads",
-    "url": "https://trend-ads.com",
-    "logo": "https://trend-ads.com/logos/logo.png",
-    "image": "https://trend-ads.com/logos/logo.png",
+    "url": "https://www.trend-ads.com",
+    "logo": "https://www.trend-ads.com/logos/logo.png",
+    "image": "https://www.trend-ads.com/logos/logo.png",
     "telephone": "+91-9746730297",
     "priceRange": "$$",
     "currenciesAccepted": "USD, INR, EUR, AED",
@@ -122,37 +122,37 @@ export default function JsonLd() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://trend-ads.com"
+        "item": "https://www.trend-ads.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "About Us",
-        "item": "https://trend-ads.com/#about-us"
+        "item": "https://www.trend-ads.com/#about-us"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Services",
-        "item": "https://trend-ads.com/#services"
+        "item": "https://www.trend-ads.com/#services"
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": "Board Members",
-        "item": "https://trend-ads.com/#board-members"
+        "item": "https://www.trend-ads.com/#board-members"
       },
       {
         "@type": "ListItem",
         "position": 5,
         "name": "Process Roadmap",
-        "item": "https://trend-ads.com/#process-steps"
+        "item": "https://www.trend-ads.com/#process-steps"
       },
       {
         "@type": "ListItem",
         "position": 6,
         "name": "Contact",
-        "item": "https://trend-ads.com/#contact"
+        "item": "https://www.trend-ads.com/#contact"
       }
     ]
   };

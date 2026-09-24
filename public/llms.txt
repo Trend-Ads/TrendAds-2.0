@@ -1,11 +1,11 @@
 # Trend Ads
 
-> Trend Ads (https://trend-ads.com) is a high-impact creative advertising and digital engineering studio based in Thrissur, Kerala, India, delivering global client solutions. We engineer category-defining brand identities, high-ROAS paid media systems (Meta, Google, TikTok), high-converting Next.js digital platforms, and viral commercial content.
+> Trend Ads (https://www.trend-ads.com) is a high-impact creative advertising and digital engineering studio based in Thrissur, Kerala, India, delivering global client solutions. We engineer category-defining brand identities, high-ROAS paid media systems (Meta, Google, TikTok), high-converting Next.js digital platforms, and viral commercial content.
 
 ## Agency Overview
 - **Name**: Trend Ads
-- **Official Domain**: https://trend-ads.com
-- **Alternative Domain**: https://www.trend-ads.com (redirects to canonical)
+- **Official Domain**: https://www.trend-ads.com
+- **Alternative Domain**: https://trend-ads.com
 - **Headquarters**: Thrissur, Kerala, India
 - **Global Coverage**: India, United States, United Kingdom, United Arab Emirates, Global
 - **Direct Phone**: +91 9746730297
@@ -28,9 +28,9 @@
 - **99.8%** client satisfaction score
 
 ## Navigation & Sections
-- [Home](https://trend-ads.com/#hero): Hero introduction & immediate project brief calculator.
-- [About Us](https://trend-ads.com/#about-us): Interactive studio dashboard, live portfolio, and ROAS simulator.
-- [Services](https://trend-ads.com/#services): Detailed capabilities, deliverables, and service breakdown.
-- [Board & Leadership](https://trend-ads.com/#board-members): Executive council and key directors.
-- [Process Steps](https://trend-ads.com/#process-steps): 4-phase agile delivery roadmap from discovery to viral scale.
-- [Contact](https://trend-ads.com/#contact): Direct quote request, WhatsApp chat, and telephone outreach.
+- [Home](https://www.trend-ads.com/#hero): Hero introduction & immediate project brief calculator.
+- [About Us](https://www.trend-ads.com/#about-us): Interactive studio dashboard, live portfolio, and ROAS simulator.
+- [Services](https://www.trend-ads.com/#services): Detailed capabilities, deliverables, and service breakdown.
+- [Board & Leadership](https://www.trend-ads.com/#board-members): Executive council and key directors.
+- [Process Steps](https://www.trend-ads.com/#process-steps): 4-phase agile delivery roadmap from discovery to viral scale.
+- [Contact](https://www.trend-ads.com/#contact): Direct quote request, WhatsApp chat, and telephone outreach.

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://trend-ads.com";
+  const baseUrl = "https://www.trend-ads.com";
   const lastModified = new Date();
 
   return [
