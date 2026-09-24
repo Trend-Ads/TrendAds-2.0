@@ -634,12 +634,12 @@ export default function AboutSection() {
                           <div className="flex items-center justify-between mb-2">
                             <div className="flex items-center gap-1.5">
                               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                              <span className="text-[9px] font-mono font-bold tracking-wider text-slate-700 uppercase">
+                              <span className="text-[9px] font-semibold tracking-wider text-slate-700 uppercase">
                                 Auto Display {isAutoPlaying ? "Active" : "Paused"}
                               </span>
                             </div>
                             <div className="flex items-center gap-1.5">
-                              <span className="text-[9px] font-mono font-bold text-slate-400">
+                              <span className="text-[9px] font-semibold text-slate-400">
                                 0{activeServiceIdx + 1} / 0{AGENCY_SERVICES.length}
                               </span>
                               <button
@@ -676,7 +676,7 @@ export default function AboutSection() {
                                     sizes="300px"
                                   />
                                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-black/20 to-transparent flex items-end p-2">
-                                    <span className="text-[8px] font-mono font-bold tracking-widest text-white uppercase bg-black/50 backdrop-blur-md px-1.5 py-0.5 rounded border border-white/10">
+                                    <span className="text-[8px] font-semibold tracking-widest text-white uppercase bg-black/50 backdrop-blur-md px-1.5 py-0.5 rounded border border-white/10">
                                       {current.category}
                                     </span>
                                   </div>
@@ -773,7 +773,7 @@ export default function AboutSection() {
                             <h3 className="text-[10px] font-bold text-slate-800 uppercase tracking-wider">
                               Capabilities Feed
                             </h3>
-                            <span className="text-[8px] font-mono text-slate-400">
+                            <span className="text-[8px] font-medium text-slate-400">
                               6 Core Offerings
                             </span>
                           </div>
@@ -1045,7 +1045,7 @@ export default function AboutSection() {
                             sizes="280px"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-2 justify-between">
-                            <span className="text-[8px] text-white font-mono font-bold">
+                            <span className="text-[8px] text-white font-semibold">
                               4.8x Avg Verified ROAS
                             </span>
                             <span className="text-[7.5px] bg-emerald-500 text-white font-bold px-1.5 py-0.5 rounded">
@@ -1194,7 +1194,7 @@ export default function AboutSection() {
 
                               {/* Time & Delivery Checkmarks */}
                               <div className="flex items-center gap-1 mt-0.5 px-1">
-                                <span className="text-[7px] text-slate-400 font-mono">{msg.time}</span>
+                                <span className="text-[7px] text-slate-400 font-medium">{msg.time}</span>
                                 {msg.sender === "user" && (
                                   <span className="text-[#2373F4] text-[9px] font-bold leading-none">
                                     ✓✓

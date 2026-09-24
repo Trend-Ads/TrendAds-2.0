@@ -292,7 +292,7 @@ export default function ServicesHorizontalSection() {
                   key={c.id}
                   type="button"
                   onClick={() => jumpToCard(c.num)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold transition-all duration-300 border flex items-center gap-1.5 cursor-pointer ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all duration-300 border flex items-center gap-1.5 cursor-pointer ${
                     isCurrent
                       ? "bg-[#010736] text-white border-[#010736] shadow-[0_4px_16px_rgba(1,7,54,0.35)] scale-105"
                       : "bg-white text-slate-700 border-slate-300 shadow-sm hover:border-[#010736]/50 hover:text-[#010736]"
@@ -440,7 +440,7 @@ export default function ServicesHorizontalSection() {
                       {/* ── Card Content: Clean, Punchy & Airy (Zero Congestion) ── */}
                       <div className="relative z-10 pl-5 sm:pl-7 space-y-6 flex-1 flex flex-col justify-center">
                         {/* Stat Pill */}
-                        <div className="inline-flex items-center gap-1.5 self-start bg-white/10 backdrop-blur-xs border border-white/20 px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-wider text-white">
+                        <div className="inline-flex items-center gap-1.5 self-start bg-white/10 backdrop-blur-xs border border-white/20 px-3 py-1 rounded-full text-[10px] font-semibold tracking-wider text-white">
                           <span className="w-1.5 h-1.5 rounded-full bg-cyan-300 animate-pulse" />
                           {card.stat}
                         </div>
@@ -464,7 +464,7 @@ export default function ServicesHorizontalSection() {
                                 <span className="block text-xs sm:text-[13px] font-bold text-white tracking-wide leading-snug">
                                   {serv.title}
                                 </span>
-                                <span className="block text-[10.5px] font-mono text-cyan-200/90 font-medium leading-tight mt-0.5">
+                                <span className="block text-[10.5px] text-cyan-200/90 font-medium leading-tight mt-0.5">
                                   {serv.tag}
                                 </span>
                               </div>
@@ -477,7 +477,7 @@ export default function ServicesHorizontalSection() {
                           {card.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="text-[9.5px] bg-white/10 text-white/85 border border-white/15 px-2.5 py-0.5 rounded-full font-mono font-medium"
+                              className="text-[9.5px] bg-white/10 text-white/85 border border-white/15 px-2.5 py-0.5 rounded-full font-medium"
                             >
                               {tag}
                             </span>
@@ -487,7 +487,7 @@ export default function ServicesHorizontalSection() {
 
                       {/* ── Card Footer with CTA ── */}
                       <div className="pt-3 border-t border-white/15 flex items-center justify-between pl-5 sm:pl-7">
-                        <span className="text-[10px] font-mono uppercase text-white/70 tracking-wider font-semibold">
+                        <span className="text-[10px] uppercase text-white/70 tracking-wider font-semibold">
                           {card.categoryEn}
                         </span>
                         <a
@@ -508,7 +508,7 @@ export default function ServicesHorizontalSection() {
 
         {/* ── BOTTOM CONTROLS & PROGRESS BAR ── */}
         <div className="relative z-50 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex flex-col sm:flex-row items-center justify-between gap-3 pt-1">
-          <div className="flex items-center gap-3 text-xs font-mono text-slate-700">
+          <div className="flex items-center gap-3 text-xs text-slate-700">
             <span className="text-[#010736] font-black">PILLAR {activeStep} OF 4</span>
             <span className="text-slate-400">·</span>
             <span className="font-semibold text-[#010736]">
@@ -526,7 +526,7 @@ export default function ServicesHorizontalSection() {
                 }}
               />
             </div>
-            <span className="text-xs font-mono font-bold text-slate-500 w-10 text-right">
+            <span className="text-xs font-semibold text-slate-500 w-10 text-right">
               {Math.round(progressVal * 100)}%
             </span>
           </div>

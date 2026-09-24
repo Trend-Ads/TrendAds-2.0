@@ -381,7 +381,7 @@ export default function BoardMembersSection() {
                     }`}
                   >
                     <span
-                      className={`text-[10px] font-mono tracking-widest font-bold mb-0.5 transition-colors ${
+                      className={`text-[10px] tracking-widest font-semibold mb-0.5 transition-colors ${
                         isSelected ? "text-[#5B7BFF]" : "text-slate-400 group-hover:text-[#5B7BFF]"
                       }`}
                     >
@@ -463,7 +463,7 @@ export default function BoardMembersSection() {
                     }`}
                   >
                     <span
-                      className={`text-[10px] font-mono tracking-widest font-bold mb-0.5 transition-colors ${
+                      className={`text-[10px] tracking-widest font-semibold mb-0.5 transition-colors ${
                         isSelected ? "text-[#5B7BFF]" : "text-slate-400 group-hover:text-[#5B7BFF]"
                       }`}
                     >
@@ -637,7 +637,7 @@ export default function BoardMembersSection() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 5, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute -top-6 sm:-top-7 left-1/2 -translate-x-1/2 z-40 px-2 sm:px-2.5 py-0.5 rounded-full bg-[#1B2CC1] text-white text-[9px] sm:text-[9.5px] font-mono font-bold tracking-wider uppercase shadow-[0_0_18px_rgba(27,44,193,0.85)] border border-[#ABD2FA]/40 whitespace-nowrap pointer-events-none"
+                        className="absolute -top-6 sm:-top-7 left-1/2 -translate-x-1/2 z-40 px-2 sm:px-2.5 py-0.5 rounded-full bg-[#1B2CC1] text-white text-[9px] sm:text-[9.5px] font-semibold tracking-wider uppercase shadow-[0_0_18px_rgba(27,44,193,0.85)] border border-[#ABD2FA]/40 whitespace-nowrap pointer-events-none"
                       >
                         {member.num} · {member.name}
                       </motion.div>
@@ -683,7 +683,7 @@ export default function BoardMembersSection() {
                     >
                       {/* Header Bar */}
                       <div className="flex items-center justify-between px-5 pt-4 pb-1 z-20">
-                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1B2CC1]/20 border border-[#1B2CC1]/50 text-[#ABD2FA] text-[10px] font-mono font-bold tracking-wider uppercase">
+                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1B2CC1]/20 border border-[#1B2CC1]/50 text-[#ABD2FA] text-[10px] font-semibold tracking-wider uppercase">
                           <span>LEADERSHIP · {selectedMember.num}</span>
                         </div>
                         <button
@@ -722,7 +722,7 @@ export default function BoardMembersSection() {
                           <h3 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight">
                             {selectedMember.name}
                           </h3>
-                          <span className="text-[11px] font-mono font-semibold text-[#ABD2FA]">
+                          <span className="text-[11px] font-semibold text-[#ABD2FA]">
                             {selectedMember.department}
                           </span>
                         </div>

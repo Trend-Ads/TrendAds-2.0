@@ -44,7 +44,7 @@ export default function Footer() {
             </p>
 
             {/* Direct Contact & Location Info */}
-            <div className="space-y-1.5 pt-1 text-xs font-mono text-slate-300">
+            <div className="space-y-1.5 pt-1 text-xs font-medium text-slate-300">
               <div className="flex items-center gap-2">
                 <span className="text-[#14FFEC]">📍</span>
                 <span>Thrissur, Kerala, India</span>
@@ -130,7 +130,7 @@ export default function Footer() {
 
           {/* Column 2: Core Disciplines (Hidden on Mobile, Visible on Tablet & Desktop) */}
           <div className="hidden md:block lg:col-span-4 space-y-3">
-            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Disciplines
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
@@ -174,7 +174,7 @@ export default function Footer() {
 
           {/* Column 3: Navigation, Blogs & Careers */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Navigation
             </h4>
             <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-6 gap-y-2.5 text-xs text-slate-400">
@@ -219,7 +219,7 @@ export default function Footer() {
                   className="inline-flex items-center gap-1.5 text-white hover:text-[#14FFEC] font-semibold transition-colors"
                 >
                   <span>Careers</span>
-                  <span className="px-1.5 py-0.5 rounded-full bg-[#14FFEC]/15 border border-[#14FFEC]/40 text-[#14FFEC] text-[9px] font-mono uppercase font-bold tracking-wider">
+                  <span className="px-1.5 py-0.5 rounded-full bg-[#14FFEC]/15 border border-[#14FFEC]/40 text-[#14FFEC] text-[9px] uppercase font-bold tracking-wider">
                     Hiring
                   </span>
                 </a>
@@ -229,7 +229,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom Copyright Bar ── */}
-        <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
+        <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex items-center gap-2">
             <span>© 2026 Trend Ads Agency Inc. All rights reserved.</span>
           </div>

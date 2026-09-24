@@ -216,7 +216,7 @@ export default function StepsSection() {
                     INFOGRAPHIC
                   </span>
 
-                  <span className="text-[8px] font-mono text-slate-300 mt-1 uppercase tracking-widest">
+                  <span className="text-[8px] font-semibold text-slate-300 mt-1 uppercase tracking-widest">
                     PRESENTATION
                   </span>
                 </div>
@@ -240,7 +240,7 @@ export default function StepsSection() {
                     QR CODE
                   </span>
                 </div>
-                <span className="text-[10px] font-mono font-bold tracking-wider text-white uppercase mt-3">
+                <span className="text-[10px] font-semibold tracking-wider text-white uppercase mt-3">
                   Scan for live roadmap
                 </span>
               </div>
@@ -368,7 +368,7 @@ export default function StepsSection() {
               className="w-full mt-5 p-4 rounded-2xl bg-[#0e1438] border border-[#ABD2FA]/50 shadow-lg text-left"
             >
               <div className="flex items-center justify-between mb-1.5">
-                <span className="text-xs font-mono font-bold text-[#ABD2FA]">
+                <span className="text-xs font-semibold text-[#ABD2FA]">
                   STAGE · {activeStep.num}
                 </span>
                 <span className="text-[10px] font-bold text-[#ABD2FA] bg-[#1B2CC1]/40 px-2 py-0.5 rounded-full border border-[#1B2CC1]">

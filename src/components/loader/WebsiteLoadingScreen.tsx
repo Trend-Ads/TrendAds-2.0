@@ -116,7 +116,7 @@ export default function WebsiteLoadingScreen({
             />
 
             {/* ── Top Header Row (Minimal & Light) ── */}
-            <div className="relative z-30 flex items-center justify-between text-xs font-mono tracking-widest text-slate-500">
+            <div className="relative z-30 flex items-center justify-between text-xs tracking-widest text-slate-500">
               <motion.div
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ export default function WebsiteLoadingScreen({
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="flex items-center gap-2 text-slate-500 font-mono text-[11px]"
+                className="flex items-center gap-2 text-slate-500 text-[11px] font-medium"
               >
                 <span>EST. 2024</span>
                 <span className="text-[#0D7377] font-semibold">• WORLDWIDE</span>
@@ -192,7 +192,7 @@ export default function WebsiteLoadingScreen({
                 className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-slate-200/80 shadow-[0_2px_10px_rgba(0,0,0,0.03)] backdrop-blur-md"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0D7377] animate-ping" />
-                <span className="text-[11px] sm:text-xs font-mono font-medium text-slate-700 tracking-wider">
+                <span className="text-[11px] sm:text-xs font-medium text-slate-700 tracking-wider">
                   {statusText}
                 </span>
               </motion.div>
@@ -244,7 +244,7 @@ export default function WebsiteLoadingScreen({
               </div>
 
               {/* Minimalist Footnote */}
-              <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 tracking-widest uppercase">
+              <div className="flex items-center justify-between text-[11px] font-medium text-slate-500 tracking-widest uppercase">
                 <span className="font-semibold text-slate-600">[ DIGITAL EXPERIENCES ]</span>
                 <span className="text-[#0D7377] font-bold">
                   {progress < 100 ? "LOADING" : "READY"}

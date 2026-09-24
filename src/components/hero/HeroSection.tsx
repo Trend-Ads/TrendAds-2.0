@@ -262,7 +262,7 @@ export default function HeroSection() {
         <p className="hero-right-text">
           We turn ambitious
           <br />
-          digital products —<br />
+          digital products<br />
           built to impress.
         </p>
       </div>

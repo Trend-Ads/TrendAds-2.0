@@ -26,11 +26,18 @@ export default function Navbar() {
 
   // Smooth scroll handler for both desktop and mobile
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
     setMobileMenuOpen(false);
 
     if (href.startsWith("#")) {
       const targetId = href.replace("#", "");
+
+      // If we are on a secondary route like /404, redirect to home with hash
+      if (typeof window !== "undefined" && window.location.pathname !== "/") {
+        window.location.href = targetId === "hero" ? "/" : `/${href}`;
+        return;
+      }
+
+      e.preventDefault();
       document.body.style.overflow = "";
 
       setTimeout(() => {
@@ -319,7 +326,7 @@ export default function Navbar() {
                     >
                       <div className="flex items-baseline gap-4">
                         <span
-                          className={`text-xs font-mono font-bold transition-colors ${
+                          className={`text-xs font-semibold transition-colors ${
                             isActive
                               ? "text-[#1B2CC1]"
                               : "text-slate-400 group-hover:text-[#1B2CC1]"
@@ -330,7 +337,7 @@ export default function Navbar() {
                         <span className="transition-transform group-hover:translate-x-1 duration-200 flex items-center gap-3">
                           {item.label}
                           {isActive && (
-                            <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-[#1B2CC1]/10 text-[#1B2CC1] border border-[#1B2CC1]/30 tracking-wider">
+                            <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-[#1B2CC1]/10 text-[#1B2CC1] border border-[#1B2CC1]/30 tracking-wider">
                               CURRENT
                             </span>
                           )}
@@ -363,7 +370,7 @@ export default function Navbar() {
                 >
                   <div className="flex items-baseline gap-4">
                     <span
-                      className={`text-xs font-mono font-bold transition-colors ${
+                      className={`text-xs font-semibold transition-colors ${
                         activeSection === "contact"
                           ? "text-[#1B2CC1]"
                           : "text-slate-400 group-hover:text-[#1B2CC1]"
@@ -374,7 +381,7 @@ export default function Navbar() {
                     <span className="transition-transform group-hover:translate-x-1 duration-200 flex items-center gap-3">
                       Contact
                       {activeSection === "contact" && (
-                        <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-[#1B2CC1]/10 text-[#1B2CC1] border border-[#1B2CC1]/30 tracking-wider">
+                        <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-[#1B2CC1]/10 text-[#1B2CC1] border border-[#1B2CC1]/30 tracking-wider">
                           CURRENT
                         </span>
                       )}
@@ -408,7 +415,7 @@ export default function Navbar() {
                 Start Your Project
               </a>
 
-              <div className="flex items-center justify-between text-xs text-slate-500 font-mono pt-1">
+              <div className="flex items-center justify-between text-xs text-slate-500 font-medium pt-1">
                 <a href="mailto:trendads.in@gmail.com" className="hover:text-[#1B2CC1] transition-colors">
                   trendads.in@gmail.com
                 </a>
