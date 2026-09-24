@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import SourceBadge from "@/components/trust/SourceBadge";
 
 interface ServiceItem {
   id: string;
@@ -958,9 +959,22 @@ export default function AboutSection() {
                                   <p className="text-[8px] text-slate-400">{cs.service}</p>
                                 </div>
                               </div>
-                              <span className="text-[8px] font-black text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-md">
-                                {cs.result}
-                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-[8px] font-black text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-md">
+                                  {cs.result}
+                                </span>
+                                <SourceBadge
+                                  sourceId={
+                                    cs.client === "LuxeAura"
+                                      ? "case-study-luxeaura"
+                                      : cs.client === "TechFlow"
+                                      ? "case-study-techflow"
+                                      : "roas-average"
+                                  }
+                                  size="xs"
+                                  align="right"
+                                />
+                              </div>
                             </div>
                             <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
                               <div className="h-full bg-gradient-to-r from-[#2373F4] to-emerald-500 w-[88%]" />
@@ -987,9 +1001,12 @@ export default function AboutSection() {
                           <h3 className="text-[11px] font-extrabold text-slate-900 uppercase">
                             ROAS Simulator
                           </h3>
-                          <span className="text-[8px] font-bold text-[#2373F4] bg-blue-50 px-1.5 py-0.5 rounded-full">
-                            4.8x Multiplier
-                          </span>
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-[8px] font-bold text-[#2373F4] bg-blue-50 px-1.5 py-0.5 rounded-full">
+                              4.8x Multiplier
+                            </span>
+                            <SourceBadge sourceId="roas-average" size="xs" align="right" />
+                          </div>
                         </div>
 
                         {/* Interactive Budget Selector */}
@@ -1045,9 +1062,12 @@ export default function AboutSection() {
                             sizes="280px"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-2 justify-between">
-                            <span className="text-[8px] text-white font-semibold">
-                              4.8x Avg Verified ROAS
-                            </span>
+                            <div className="flex items-center gap-1.5">
+                              <span className="text-[8px] text-white font-semibold">
+                                4.8x Avg Verified ROAS
+                              </span>
+                              <SourceBadge sourceId="roas-average" size="xs" align="left" />
+                            </div>
                             <span className="text-[7.5px] bg-emerald-500 text-white font-bold px-1.5 py-0.5 rounded">
                               Live
                             </span>

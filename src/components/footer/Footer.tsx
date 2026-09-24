@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import SourceBadge from "../trust/SourceBadge";
+import SourceTransparencyModal from "../trust/SourceTransparencyModal";
 
 export default function Footer() {
+  const [showSourceModal, setShowSourceModal] = useState(false);
   return (
     <div className="w-full bg-[#f3f5f8]">
       <footer
@@ -45,9 +48,14 @@ export default function Footer() {
 
             {/* Direct Contact & Location Info */}
             <div className="space-y-1.5 pt-1 text-xs font-medium text-slate-300">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <span className="text-[#14FFEC]">📍</span>
                 <span>Thrissur, Kerala, India</span>
+                <SourceBadge
+                  sourceId="business-entity"
+                  size="sm"
+                  className="bg-slate-800/80 hover:bg-slate-700/80 text-slate-300"
+                />
               </div>
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                 <a href="tel:+919746730297" className="hover:text-[#14FFEC] transition-colors">
@@ -213,6 +221,16 @@ export default function Footer() {
                   Contact Us
                 </a>
               </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setShowSourceModal(true)}
+                  className="hover:text-[#14FFEC] transition-colors text-left inline-flex items-center gap-1.5"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#14FFEC] animate-pulse" />
+                  Source Trust Registry
+                </button>
+              </li>
               <li className="pt-0.5">
                 <a
                   href="#contact"
@@ -230,8 +248,16 @@ export default function Footer() {
 
         {/* ── Bottom Copyright Bar ── */}
         <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-3">
             <span>© 2026 Trend Ads Agency Inc. All rights reserved.</span>
+            <span className="hidden sm:inline text-slate-600">•</span>
+            <button
+              type="button"
+              onClick={() => setShowSourceModal(true)}
+              className="text-slate-400 hover:text-[#14FFEC] underline underline-offset-2 transition-colors cursor-pointer text-[11px]"
+            >
+              Source Credibility & Verification Standards
+            </button>
           </div>
 
           <div className="flex items-center gap-3 text-slate-500 text-[11px]">
@@ -241,6 +267,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* ── Source Credibility & Transparency Registry Modal ── */}
+      <SourceTransparencyModal
+        isOpen={showSourceModal}
+        onClose={() => setShowSourceModal(false)}
+        showTrigger={false}
+      />
     </footer>
     </div>
   );

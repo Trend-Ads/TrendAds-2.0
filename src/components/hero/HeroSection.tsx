@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import SourceBadge from "@/components/trust/SourceBadge";
 
 const servicesList = [
   "Web & Mobile Development",
@@ -109,9 +110,10 @@ export default function HeroSection() {
             </div>
           ))}
         </div>
-        <p className="hero-social-text">
-          <strong>100+</strong> Projects Delivered Worldwide
-        </p>
+        <div className="hero-social-text flex items-center gap-2">
+          <span><strong>100+</strong> Projects Delivered Worldwide</span>
+          <SourceBadge sourceId="projects-delivered" size="xs" align="left" />
+        </div>
       </div>
 
       {/* ── Slide counter ── */}

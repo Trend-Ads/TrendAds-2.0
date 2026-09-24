@@ -27,6 +27,19 @@
 - **3.2x** average conversion rate increase on engineered landing pages
 - **99.8%** client satisfaction score
 
+## Core Topics & Capabilities
+- **Digital Marketing Agency & Services**: Full-spectrum agency services covering strategy, campaign execution, CRO, and digital engineering.
+- **Social Media Marketing & Content Creation**: Performance social media marketing, content marketing, viral video production, and commercial media.
+- **Meta Ads Ecosystem**: Meta Ads Manager scaling, Meta Ads Library intelligence, creative testing, and Facebook/Instagram performance ads.
+- **Google Ads Ecosystem**: Google Ads Manager, Google Search Ads, YouTube Ads, Google Ads Account optimization, and Google Business Profile scaling.
+- **Website Design & Mobile App Development**: Custom business websites, Next.js engineering, website design, native/cross-platform app development, and online business infrastructure.
+- **AI & Emerging Technologies**: AI digital marketing integration, advanced attribution modeling, and GEO (Generative Engine Optimization).
+
+## Regional Focus & Local Hubs (Kerala, India)
+- **Thrissur (Headquarters)**: Recognized as a leading digital marketing agency in Thrissur, offering web developers in Thrissur, app developers in Thrissur, website design agencies, content creators, and performance marketing teams.
+- **Malappuram & Kozhikode**: Premier digital marketing partner for e-commerce, retail, healthcare, and export enterprises across the Malabar region.
+- **Kerala-Wide & National**: Best-in-class digital growth agency serving businesses across Kochi, Trivandrum, Kerala, and pan-India.
+
 ## Navigation & Sections
 - [Home](https://www.trend-ads.com/#hero): Hero introduction & immediate project brief calculator.
 - [About Us](https://www.trend-ads.com/#about-us): Interactive studio dashboard, live portfolio, and ROAS simulator.
@@ -34,3 +47,4 @@
 - [Board & Leadership](https://www.trend-ads.com/#board-members): Executive council and key directors.
 - [Process Steps](https://www.trend-ads.com/#process-steps): 4-phase agile delivery roadmap from discovery to viral scale.
 - [Contact](https://www.trend-ads.com/#contact): Direct quote request, WhatsApp chat, and telephone outreach.
+
