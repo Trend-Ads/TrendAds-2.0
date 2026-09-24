@@ -127,8 +127,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Core Disciplines (Expanded) */}
-          <div className="lg:col-span-4 space-y-3">
+          {/* Column 2: Core Disciplines (Hidden on Mobile, Visible on Tablet & Desktop) */}
+          <div className="hidden md:block lg:col-span-4 space-y-3">
             <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
               Disciplines
             </h4>
@@ -171,12 +171,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Navigation & Careers */}
+          {/* Column 3: Navigation, Blogs & Careers */}
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
               Navigation
             </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
+            <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-6 gap-y-2.5 text-xs text-slate-400">
               <li>
                 <a href="#hero" className="hover:text-[#14FFEC] transition-colors">
                   Home
@@ -203,18 +203,23 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#blogs" className="hover:text-[#14FFEC] transition-colors">
+                  Blogs
+                </a>
+              </li>
+              <li>
                 <a href="#contact" className="hover:text-[#14FFEC] transition-colors">
                   Contact Us
                 </a>
               </li>
-              <li className="pt-1">
+              <li className="pt-0.5">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 text-white hover:text-[#14FFEC] font-semibold transition-colors"
+                  className="inline-flex items-center gap-1.5 text-white hover:text-[#14FFEC] font-semibold transition-colors"
                 >
                   <span>Careers</span>
                   <span className="px-1.5 py-0.5 rounded-full bg-[#14FFEC]/15 border border-[#14FFEC]/40 text-[#14FFEC] text-[9px] font-mono uppercase font-bold tracking-wider">
-                    We&apos;re Hiring
+                    Hiring
                   </span>
                 </a>
               </li>
