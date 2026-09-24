@@ -307,7 +307,7 @@ export default function BoardMembersSection() {
     <section
       ref={containerRef}
       id="board-members"
-      className="bg-[#07080b] py-20 sm:py-28 lg:py-32 relative overflow-hidden text-white select-none"
+      className="bg-[#07080b] pt-20 sm:pt-28 lg:pt-32 pb-2 sm:pb-4 lg:pb-6 relative overflow-hidden text-white select-none"
     >
       {/* ── Cinematic Studio Ambient Atmosphere ── */}
       <div
@@ -524,7 +524,7 @@ export default function BoardMembersSection() {
             ref={stageRef}
             onPointerMove={handlePointerMove}
             onPointerLeave={handlePointerLeave}
-            className="relative w-full max-w-[660px] sm:max-w-[700px] lg:max-w-[740px] mx-auto aspect-[1145/1374] overflow-visible mb-6"
+            className="relative w-full max-w-[660px] sm:max-w-[700px] lg:max-w-[740px] mx-auto aspect-[1145/1374] overflow-visible mb-0"
             style={{
               transform: `perspective(1000px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
               transition: "transform 0.15s cubic-bezier(0.2, 0, 0.3, 1)",
