@@ -55,7 +55,8 @@ export default function JsonLd() {
     "@type": "WebSite",
     "@id": "https://www.trend-ads.com/#website",
     "url": "https://www.trend-ads.com",
-    "name": "Trend Ads — Creative Advertising & Digital Growth Agency",
+    "name": "Trend Ads",
+    "alternateName": ["TrendAds", "Trend Ads Agency"],
     "description":
       "A creative studio crafting bold digital products, brand systems, and advertising experiences that drive real revenue growth.",
     "publisher": {
