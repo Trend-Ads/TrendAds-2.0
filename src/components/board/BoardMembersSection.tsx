@@ -11,6 +11,7 @@ interface BoardMember {
   name: string;
   firstName: string;
   role: string;
+  modalRole?: string;
   department: string;
   image: string;
   description: string;
@@ -92,13 +93,14 @@ const BOARD_MEMBERS: BoardMember[] = [
     num: "06",
     name: "Shamveel P",
     firstName: "Shamveel",
-    role: "Head of Web Development",
-    department: "Web Engineering & Tech",
+    role: "Head of Engineering",
+    modalRole: "Head of Engineering · Founding Engineer",
+    department: "Engineering Leadership",
     image: "/board-members/shamveel.png",
     linkedIn: "https://www.linkedin.com/in/shamveel-p/",
     instagram: "https://www.instagram.com/_shamveel._/",
     description:
-      "Architecting modern web platforms, interactive web experiences, and scalable front-end systems as Head of Web Development.",
+      "Spearheading technical architecture, scalable engineering platforms, and core digital systems as Head of Engineering and Founding Engineer.",
   },
   {
     id: "parveen",
@@ -411,7 +413,7 @@ export default function BoardMembersSection() {
                     </div>
 
                     <p className="text-xs sm:text-sm font-semibold text-[#90CAF9]">
-                      {selectedMember.role}
+                      {selectedMember.modalRole || selectedMember.role}
                     </p>
 
                     <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal pt-2">
