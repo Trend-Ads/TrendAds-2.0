@@ -18,7 +18,7 @@ interface BoardMember {
   instagram?: string;
 }
 
-// ── 10 BOARD MEMBERS ──
+// ── 11 BOARD MEMBERS ──
 const BOARD_MEMBERS: BoardMember[] = [
   {
     id: "neeraj",
@@ -140,11 +140,22 @@ const BOARD_MEMBERS: BoardMember[] = [
     num: "10",
     name: "Beena Mohammed Ali",
     firstName: "Beena",
-    role: "Creative Head",
-    department: "Creative Direction",
+    role: "Customer Support",
+    department: "Customer Support",
     image: "/board-members/beena.png",
     description:
-      "Guiding creative standards, brand aesthetic excellence, and quality execution across agency projects as Creative Head.",
+      "Providing proactive customer care, smooth client onboarding, and dedicated client service delivery as Customer Support.",
+  },
+  {
+    id: "nejumath",
+    num: "11",
+    name: "Nejumath Zeyana",
+    firstName: "Nejumath",
+    role: "Customer Support",
+    department: "Customer Support",
+    image: "/board-members/nejumath.png",
+    description:
+      "Delivering dedicated client assistance, seamless communication, and responsive customer care as Customer Support.",
   },
 ];
 
@@ -230,7 +241,11 @@ export default function BoardMembersSection() {
             <div
               key={member.id}
               onClick={() => setSelectedId(member.id)}
-              className="group cursor-pointer flex flex-col relative transition-all duration-300 hover:-translate-y-2.5 select-none"
+              className={`group cursor-pointer flex flex-col relative transition-all duration-300 hover:-translate-y-2.5 select-none ${
+                member.id === "nejumath"
+                  ? "col-span-2 max-w-[calc(50%-0.5rem)] sm:max-w-none sm:col-span-1 mx-auto w-full lg:col-start-3"
+                  : ""
+              }`}
             >
               {/* 
                 ── THE DUAL-COLORED CARD (#091540 DARK BLUE + WHITE) ──
