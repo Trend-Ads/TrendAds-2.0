@@ -212,6 +212,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/documents" className="hover:text-[#14FFEC] transition-colors flex items-center gap-1.5 font-semibold text-white">
+                  <span>Free Documents & Guides</span>
+                  <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-[#1B2CC1] text-white">NEW</span>
+                </a>
+              </li>
+              <li>
                 <a href="#services" className="hover:text-[#14FFEC] transition-colors">
                   Case Studies & Insights
                 </a>
