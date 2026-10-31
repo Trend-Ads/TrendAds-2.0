@@ -47,17 +47,47 @@ export default function Footer() {
             </p>
 
             {/* Direct Contact & Location Info */}
-            <div className="space-y-1.5 pt-1 text-xs font-medium text-slate-300">
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-[#14FFEC]">📍</span>
-                <span>Thrissur, Kerala, India</span>
-                <SourceBadge
-                  sourceId="business-entity"
-                  size="sm"
-                  className="bg-slate-800/80 hover:bg-slate-700/80 text-slate-300"
-                />
+            <div className="space-y-2 pt-1 text-xs font-medium text-slate-300">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[#14FFEC]">📍</span>
+                  <a
+                    href="https://maps.app.goo.gl/fL3TsGj6RBBF5dUe9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-white hover:text-[#14FFEC] transition-colors inline-flex items-center gap-1.5 group cursor-pointer"
+                  >
+                    <span>Panampillynagar, Cochin, Kerala</span>
+                    <svg
+                      className="w-3 h-3 text-slate-400 group-hover:text-[#14FFEC] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2.5"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
+                  <SourceBadge
+                    sourceId="business-entity"
+                    size="sm"
+                    className="bg-slate-800/80 hover:bg-slate-700/80 text-slate-300"
+                  />
+                </div>
+                <a
+                  href="https://maps.app.goo.gl/fL3TsGj6RBBF5dUe9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-[11px] text-slate-400 hover:text-slate-200 transition-colors pl-5 leading-relaxed max-w-sm"
+                >
+                  2nd floor, 56/3443/A ,GCDA Shopping Complex, Panampillynagar Cochin, Kerala-682036
+                </a>
               </div>
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 pt-0.5">
                 <a href="tel:+919746730297" className="hover:text-[#14FFEC] transition-colors">
                   📞 +91 97467 30297
                 </a>
@@ -269,7 +299,14 @@ export default function Footer() {
           <div className="flex items-center gap-3 text-slate-500 text-[11px]">
             <span>Crafted for Exponential Brand Growth</span>
             <span>•</span>
-            <span className="text-[#14FFEC]">Kerala, India</span>
+            <a
+              href="https://maps.app.goo.gl/fL3TsGj6RBBF5dUe9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#14FFEC] hover:underline"
+            >
+              Cochin, Kerala, India
+            </a>
           </div>
         </div>
       </div>

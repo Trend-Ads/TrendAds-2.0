@@ -157,12 +157,11 @@ export default function ContactSection() {
                   </a>
                 </div>
 
-                {/* Email & Location Row */}
-                <div className="flex flex-wrap items-center gap-6 sm:gap-8">
-                  {/* Email */}
+                {/* Email */}
+                <div>
                   <a
                     href="mailto:trendads.in@gmail.com"
-                    className="flex items-center gap-3 group transition-opacity hover:opacity-85"
+                    className="inline-flex items-center gap-3 group transition-opacity hover:opacity-85"
                   >
                     <span className="w-9 h-9 rounded-full bg-[#18181b] text-white flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-105">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -173,18 +172,38 @@ export default function ContactSection() {
                       trendads.in@gmail.com
                     </span>
                   </a>
+                </div>
 
-                  {/* Location */}
-                  <div className="flex items-center gap-3">
-                    <span className="w-9 h-9 rounded-full bg-[#18181b] text-white flex items-center justify-center shrink-0 shadow-sm">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                {/* Office Location & Google Maps Card */}
+                <div className="pt-1">
+                  <a
+                    href="https://maps.app.goo.gl/fL3TsGj6RBBF5dUe9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/90 transition-all duration-200 group max-w-lg cursor-pointer"
+                  >
+                    <span className="w-9 h-9 rounded-full bg-[#18181b] text-white flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-105 mt-0.5">
+                      <svg className="w-4 h-4 text-[#14FFEC]" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
                       </svg>
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-[#18181b]">
-                      Thrissur, Kerala, India
-                    </span>
-                  </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-2 mb-0.5">
+                        <span className="text-xs sm:text-sm font-bold text-[#18181b] group-hover:text-[#1B2CC1] transition-colors">
+                          Trend Ads
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#1B2CC1] bg-[#1B2CC1]/10 px-2.5 py-0.5 rounded-full border border-[#1B2CC1]/20 group-hover:bg-[#1B2CC1] group-hover:text-white transition-all shrink-0">
+                          <span>Open in Maps</span>
+                          <svg className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-600 font-medium leading-relaxed">
+                        2nd floor, 56/3443/A ,GCDA Shopping Complex, Panampillynagar Cochin, Kerala-682036
+                      </p>
+                    </div>
+                  </a>
                 </div>
 
                 {/* ── Social Media Channels (LinkedIn, Instagram, Facebook - Round & Compact) ── */}

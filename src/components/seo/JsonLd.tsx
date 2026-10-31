@@ -14,10 +14,13 @@ export default function JsonLd() {
     "email": "trendads.in@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Thrissur",
+      "streetAddress": "2nd floor, 56/3443/A ,GCDA Shopping Complex, Panampillynagar",
+      "addressLocality": "Cochin",
       "addressRegion": "Kerala",
+      "postalCode": "682036",
       "addressCountry": "IN"
     },
+    "hasMap": "https://maps.app.goo.gl/fL3TsGj6RBBF5dUe9",
     "founder": {
       "@type": "Person",
       "name": "Neeraj Sudheer",
@@ -164,22 +167,26 @@ export default function JsonLd() {
     "paymentAccepted": "Credit Card, Bank Wire, UPI",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Main Commercial District",
-      "addressLocality": "Thrissur",
+      "streetAddress": "2nd floor, 56/3443/A ,GCDA Shopping Complex, Panampillynagar",
+      "addressLocality": "Cochin",
       "addressRegion": "Kerala",
-      "postalCode": "680001",
+      "postalCode": "682036",
       "addressCountry": "IN"
     },
+    "hasMap": "https://maps.app.goo.gl/fL3TsGj6RBBF5dUe9",
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 10.5276,
-      "longitude": 76.2144
+      "latitude": 9.962808,
+      "longitude": 76.29586
     },
     "areaServed": [
+      "Cochin",
+      "Kochi",
+      "Ernakulam",
+      "Panampilly Nagar",
       "Thrissur",
       "Malappuram",
       "Kozhikode",
-      "Kochi",
       "Kerala",
       "India",
       "Worldwide",
@@ -319,7 +326,7 @@ export default function JsonLd() {
         "name": "Where is Trend Ads located and what geographic markets do you serve?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Trend Ads is headquartered in Thrissur, Kerala, India, and serves venture-backed startups and established DTC/B2B brands across India, North America, the United Kingdom, and the United Arab Emirates."
+          "text": "Trend Ads is headquartered at 2nd floor, 56/3443/A ,GCDA Shopping Complex, Panampillynagar Cochin, Kerala-682036, India, and serves venture-backed startups and established DTC/B2B brands across India, North America, the United Kingdom, and the United Arab Emirates."
         }
       },
       {

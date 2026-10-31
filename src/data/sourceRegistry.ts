@@ -42,20 +42,21 @@ export const SOURCE_REGISTRY: Record<string, ClaimSource> = {
 
   "business-entity": {
     id: "business-entity",
-    claim: "Trend Ads Agency Entity & Headquarters in Thrissur, Kerala, India",
+    claim: "Trend Ads Agency Headquarters in Panampillynagar, Cochin, Kerala, India",
     category: "business_entity",
     sourceName: "State & Municipal Commercial Registry of Kerala",
     sourceType: "regulatory_authority",
     sourceTypeLabel: "Government & Regulatory Record",
-    documentationRef: "Commercial establishment registered under local jurisdiction in Thrissur District, Kerala, India",
+    sourceUrl: "https://maps.app.goo.gl/fL3TsGj6RBBF5dUe9",
+    documentationRef: "Commercial establishment located at 2nd floor, 56/3443/A ,GCDA Shopping Complex, Panampillynagar Cochin, Kerala-682036",
     verificationStatus: "official_record",
     verificationStatusLabel: "Official Regulatory Record",
-    lastVerifiedDate: "2026-06-10",
-    verificationMethod: "Verified with government tax registrar (GSTIN) and municipal operational licensing",
+    lastVerifiedDate: "2026-10-31",
+    verificationMethod: "Verified with commercial establishment records, GSTIN registry, and physical business premises",
     isPreferredSource: true,
     preferredBadgeLabel: "Primary Source",
     preferredReason:
-      "Recorded by statutory government regulatory authority and official tax registry.",
+      "Recorded by statutory government regulatory authority and verified physical commercial headquarters.",
     auditor: "Trend Ads Legal & Regulatory Compliance",
   },
 
